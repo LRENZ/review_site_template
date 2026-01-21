@@ -12,13 +12,14 @@ import Image from "next/image";
 import type { Metadata } from 'next';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 // Generate Metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const review = reviews.find((r) => r.slug === params.slug);
-  
+  const { slug } = await params;
+  const review = reviews.find((r) => r.slug === slug);
+
   if (!review) {
     return { title: 'Review Not Found' };
   }
@@ -41,8 +42,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ReviewDetail({ params }: Props) {
-  const review = reviews.find((r) => r.slug === params.slug);
+// Allow dynamic params for routes not pre-generated
+export const dynamicParams = true;
+
+export default async function ReviewDetail({ params }: Props) {
+  const { slug } = await params;
+  const review = reviews.find((r) => r.slug === slug);
 
   if (!review) return notFound();
 
@@ -51,12 +56,12 @@ export default function ReviewDetail({ params }: Props) {
       {/* Breadcrumb / Back Link */}
       <div className="bg-secondary/30 border-b">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
-           <Link href="/" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4 mr-1" /> Back to Reviews
-           </Link>
+          <Link href="/" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-6">
+            <ArrowLeft className="w-4 h-4 mr-1" /> Back to Reviews
+          </Link>
 
           <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-start">
-            
+
             {/* Main Header Info */}
             <div className="space-y-6">
               <div className="flex flex-wrap gap-2">
@@ -72,11 +77,11 @@ export default function ReviewDetail({ params }: Props) {
                   </Badge>
                 )}
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-foreground leading-[1.1]">
                 {review.title}
               </h1>
-              
+
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center bg-primary text-primary-foreground px-3 py-1.5 rounded-full font-bold">
                   <Star className="w-4 h-4 fill-current mr-1.5" />
@@ -93,10 +98,10 @@ export default function ReviewDetail({ params }: Props) {
 
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 relative">
-          
+
           {/* Main Content Column */}
           <div className="space-y-12">
-            
+
             {/* Editorial Verdict Block */}
             {review.editorialVerdict && (
               <section className="bg-card border rounded-2xl p-8 shadow-sm relative overflow-hidden">
@@ -118,8 +123,8 @@ export default function ReviewDetail({ params }: Props) {
                 </h3>
                 <div className="prose prose-sm max-w-none text-foreground/80 font-medium">
                   {review.buyingAdvice.split('Skip if').map((part, i) => {
-                    if (i === 0) return <p key={i} className="mb-2"><span className="text-emerald-600 font-bold uppercase mr-2"><ThumbsUp className="w-4 h-4 inline mb-1"/> {part.replace('Buy if', 'Buy if')}</span></p>;
-                    return <p key={i} className="mt-4"><span className="text-rose-600 font-bold uppercase mr-2"><ThumbsDown className="w-4 h-4 inline mb-1"/> Skip if</span>{part}</p>;
+                    if (i === 0) return <p key={i} className="mb-2"><span className="text-emerald-600 font-bold uppercase mr-2"><ThumbsUp className="w-4 h-4 inline mb-1" /> {part.replace('Buy if', 'Buy if')}</span></p>;
+                    return <p key={i} className="mt-4"><span className="text-rose-600 font-bold uppercase mr-2"><ThumbsDown className="w-4 h-4 inline mb-1" /> Skip if</span>{part}</p>;
                   })}
                 </div>
               </section>
@@ -157,15 +162,15 @@ export default function ReviewDetail({ params }: Props) {
             {/* Specs Table */}
             {review.specs && Object.keys(review.specs).length > 0 && (
               <section>
-                 <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-muted-foreground text-sm">Tech Specs</h3>
-                 <div className="grid sm:grid-cols-2 gap-4">
-                   {Object.entries(review.specs).map(([key, value]) => (
-                     <div key={key} className="flex justify-between items-center p-4 bg-secondary/20 rounded-lg border">
-                       <span className="font-medium text-muted-foreground">{key}</span>
-                       <span className="font-bold text-foreground text-right">{value}</span>
-                     </div>
-                   ))}
-                 </div>
+                <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-muted-foreground text-sm">Tech Specs</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {Object.entries(review.specs).map(([key, value]) => (
+                    <div key={key} className="flex justify-between items-center p-4 bg-secondary/20 rounded-lg border">
+                      <span className="font-medium text-muted-foreground">{key}</span>
+                      <span className="font-bold text-foreground text-right">{value}</span>
+                    </div>
+                  ))}
+                </div>
               </section>
             )}
 
@@ -187,7 +192,7 @@ export default function ReviewDetail({ params }: Props) {
                     </ul>
                   </div>
                 )}
-                
+
                 {review.cons?.length > 0 && (
                   <div className="bg-rose-50/50 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900 rounded-xl p-6">
                     <h3 className="text-rose-700 dark:text-rose-400 font-bold mb-4 flex items-center gap-2">
@@ -228,8 +233,8 @@ export default function ReviewDetail({ params }: Props) {
             <div className="bg-muted/50 p-6 rounded-lg text-sm text-muted-foreground flex gap-4 items-start">
               <Info className="w-5 h-5 shrink-0 mt-0.5" />
               <p>
-                <strong>Independent Advice:</strong> We purchase our own products for testing. 
-                We never accept payment for positive reviews. 
+                <strong>Independent Advice:</strong> We purchase our own products for testing.
+                We never accept payment for positive reviews.
                 <Link href="/disclosure" className="underline hover:text-foreground">Read our full ethics statement.</Link>
               </p>
             </div>
@@ -240,12 +245,12 @@ export default function ReviewDetail({ params }: Props) {
             <div className="sticky top-24 space-y-6">
               <Card className="p-6 shadow-xl border-border overflow-hidden">
                 <div className="aspect-square bg-white rounded-lg mb-6 flex items-center justify-center overflow-hidden border border-secondary relative group">
-                   <Image 
-                     src={review.thumbnailUrl} 
-                     alt={review.title}
-                     fill
-                     className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform duration-500"
-                   />
+                  <Image
+                    src={review.thumbnailUrl}
+                    alt={review.title}
+                    fill
+                    className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="text-center space-y-6">
                   <div>
@@ -258,7 +263,7 @@ export default function ReviewDetail({ params }: Props) {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div className="text-2xl font-bold text-foreground">{review.price}</div>
                     <Button size="lg" className="w-full text-lg font-semibold h-12 shadow-primary/20 shadow-lg" asChild>
@@ -276,15 +281,15 @@ export default function ReviewDetail({ params }: Props) {
               {/* Quick Summary Card */}
               {review.specs && (
                 <Card className="p-6 bg-secondary/30 border-none">
-                   <h4 className="font-bold mb-3 text-sm uppercase">At a Glance</h4>
-                   <ul className="space-y-2 text-sm">
-                     {Object.entries(review.specs).slice(0, 3).map(([k, v]) => (
-                       <li key={k} className="flex justify-between">
-                         <span className="text-muted-foreground">{k}:</span>
-                         <span className="font-medium">{v}</span>
-                       </li>
-                     ))}
-                   </ul>
+                  <h4 className="font-bold mb-3 text-sm uppercase">At a Glance</h4>
+                  <ul className="space-y-2 text-sm">
+                    {Object.entries(review.specs).slice(0, 3).map(([k, v]) => (
+                      <li key={k} className="flex justify-between">
+                        <span className="text-muted-foreground">{k}:</span>
+                        <span className="font-medium">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </Card>
               )}
             </div>

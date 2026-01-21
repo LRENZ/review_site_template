@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCollection } from "@/data/collections";
+import { getCollection, collections } from "@/data/collections";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter } from "@/components/ui/card";
 import { Star, ArrowLeft, Quote, ArrowUpRight } from "lucide-react";
@@ -10,12 +10,13 @@ import { reviews } from "@/data/reviews";
 import type { Metadata } from 'next';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const collection = getCollection(params.slug);
-  
+  const { slug } = await params;
+  const collection = getCollection(slug);
+
   if (!collection) {
     return { title: 'Collection Not Found' };
   }
@@ -31,8 +32,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Collection({ params }: Props) {
-  const collection = getCollection(params.slug);
+// Generate Static Params for SSG
+export async function generateStaticParams() {
+  return collections.map((collection) => ({
+    slug: collection.slug,
+  }));
+}
+
+// Allow dynamic params for routes not pre-generated
+export const dynamicParams = true;
+
+export default async function Collection({ params }: Props) {
+  const { slug } = await params;
+  const collection = getCollection(slug);
 
   if (!collection) return notFound();
 
@@ -40,8 +52,8 @@ export default function Collection({ params }: Props) {
     <>
       {/* Editorial Hero */}
       <div className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
-        <Image 
-          src={collection.heroImage} 
+        <Image
+          src={collection.heroImage}
           alt={collection.title}
           fill
           className="object-cover animate-in fade-in zoom-in duration-1000"
@@ -49,11 +61,11 @@ export default function Collection({ params }: Props) {
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        
+
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 lg:p-24">
           <div className="container mx-auto max-w-6xl">
             <Link href="/" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white mb-8 transition-colors uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full backdrop-blur-sm bg-black/10">
-                <ArrowLeft className="w-4 h-4 mr-2" /> BrandDragon Collections
+              <ArrowLeft className="w-4 h-4 mr-2" /> BrandDragon Collections
             </Link>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-[0.9] tracking-tighter">
               {collection.title}
@@ -70,7 +82,7 @@ export default function Collection({ params }: Props) {
         {collection.items.map((item, index) => {
           const review = reviews.find(r => r.slug === item.reviewSlug);
           if (!review) return null;
-          
+
           const isEven = index % 2 === 0;
 
           return (
@@ -78,20 +90,20 @@ export default function Collection({ params }: Props) {
               "flex flex-col gap-12 lg:gap-24 items-center group",
               isEven ? "lg:flex-row" : "lg:flex-row-reverse"
             )}>
-              
+
               {/* Image Side */}
               <div className="w-full lg:w-1/2">
                 <Link href={`/review/${review.slug}`} className="block overflow-hidden rounded-sm relative aspect-[4/5] shadow-2xl cursor-pointer">
-                    <Image 
-                      src={review.thumbnailUrl} 
-                      alt={review.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-                    <div className="absolute bottom-6 right-6 bg-white text-black px-4 py-2 font-bold font-serif text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                      Read Full Review
-                    </div>
+                  <Image
+                    src={review.thumbnailUrl}
+                    alt={review.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                  <div className="absolute bottom-6 right-6 bg-white text-black px-4 py-2 font-bold font-serif text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+                    Read Full Review
+                  </div>
                 </Link>
               </div>
 
@@ -104,13 +116,13 @@ export default function Collection({ params }: Props) {
                     </span>
                     <div className="h-px bg-border flex-1" />
                   </div>
-                  
+
                   <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
                     <Link href={`/review/${review.slug}`} className="hover:text-primary transition-colors hover:underline decoration-2 underline-offset-4">
-                        {review.title}
+                      {review.title}
                     </Link>
                   </h2>
-                  
+
                   <div className="flex items-center gap-2 text-sm text-muted-foreground uppercase tracking-widest font-bold">
                     <span>{review.price}</span>
                     <span>•</span>
