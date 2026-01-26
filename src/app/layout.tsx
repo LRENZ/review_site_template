@@ -39,7 +39,7 @@ export default function RootLayout({
               <Footer />
               <NewsletterPopup />
               <Toaster />
-              <GoogleTagManager gtmId="GTM-MBGHXM6W" />
+              <GoogleTagManager gtmId="GTM-MVC3ZSFP" />
             </div>
           </TooltipProvider>
         </ThemeProvider>
