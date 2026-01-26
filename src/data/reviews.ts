@@ -149,7 +149,7 @@ export const reviews: Review[] = [
     toxicDeepDive: "The V15 Detect is a showy, overpriced tantrum. The laser makes dust visible, exposing what your carpet already felt. Battery life collapses under realistic use. It fetishizes data over practicality.",
     targetAudience: ["Tech-savvy homeowners", "Allergy sufferers", "Gadget lovers"]
   },
-  
+
   // ==================== NEW MARKET ITEMS (10) ====================
   {
     id: nanoid(),
@@ -420,7 +420,7 @@ export const reviews: Review[] = [
     mainCategory: 'Digital',
     subCategory: 'AI Tools',
     rating: 4.2,
-    affiliateLink: 'https://monica.im',
+    affiliateLink: 'https://monica.im/invitation-affiliate?ref=yjgyndc&ref_aff=yjgyndc',
     thumbnailUrl: monicaImg,
     updatedAt: '2024-04-22',
     editorialVerdict: "A powerhouse all-in-one AI assistant consolidating top LLMs. Unparalleled convenience but ethically murky.",
