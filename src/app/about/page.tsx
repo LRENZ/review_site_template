@@ -1,4 +1,4 @@
-"import Link from "next / link";
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import aboutTeam from "@/assets/about_team.jpg";
