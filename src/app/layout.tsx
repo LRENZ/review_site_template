@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "BrandDragon – Lifestyle Reviews for the Modern Professional",
   description: "Real reviews for real life. We test the gear and tools that power the modern professional.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
