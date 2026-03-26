@@ -26,6 +26,7 @@ export default function RootLayout({
       <head>
         <meta name="fo-verify" content="1a20ad7e-0d69-448a-9654-13bed6c4e811" />
         <meta name="impact-site-verification" {...({ value: "c70750fd-c17e-4f55-bd22-674175c82b30" } as any)} />
+        <meta name="impact-site-verification" {...({ value: "d2709593-c1da-427b-ac98-79d7e0df170e" } as any)} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
