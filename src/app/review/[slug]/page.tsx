@@ -37,9 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Generate Static Params for SSG
 export async function generateStaticParams() {
-  return reviews.map((review) => ({
-    slug: review.slug,
-  }));
+  return reviews
+    .filter((review) => review.slug !== "genspark")
+    .map((review) => ({
+      slug: review.slug,
+    }));
 }
 
 // Allow dynamic params for routes not pre-generated

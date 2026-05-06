@@ -67,6 +67,26 @@ export interface Review {
 }
 
 export const reviews: Review[] = [
+  {
+    id: nanoid(),
+    slug: 'genspark',
+    title: 'Genspark AI Workspace',
+    mainCategory: 'Digital',
+    subCategory: 'AI Tools',
+    rating: 4.7,
+    affiliateLink: 'https://mainfuncpteltd.sjv.io/7XmrDV',
+    thumbnailUrl: '/genspark-review.svg',
+    updatedAt: '2026-05-06',
+    editorialVerdict: 'Genspark is an all-in-one AI workspace built for people who want finished outputs: research, slides, docs, calls, media assets, and agent-style workflows.',
+    buyingAdvice: 'Buy if you create client deliverables, presentations, reports, campaign assets, or operating workflows every week. Skip if you only need occasional basic AI chat.',
+    pros: ['Broad AI workspace', 'Strong for finished deliverables', 'Agent-style task execution', 'Useful creator and business workflows'],
+    cons: ['Plan details can change quickly', 'Credit usage needs attention', 'Generated assets still need review'],
+    specs: { 'Category': 'AI workspace', 'Best use': 'Slides, docs, research, calls', 'Model': 'Agent-style workflows' },
+    price: 'See current offer',
+    contentSections: [],
+    toxicDeepDive: 'Genspark is most compelling when you stop treating AI like a chat box and start treating it like a production assistant. The caution is practical: verify current credits, limits, and outputs before moving critical work over wholesale.',
+    targetAudience: ['Creators', 'Marketers', 'Founders', 'Sales and operations teams']
+  },
   // ==================== EXISTING MARKET ITEMS ====================
   {
     id: nanoid(),

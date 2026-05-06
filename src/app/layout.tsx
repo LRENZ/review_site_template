@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://branddragon.com"),
   title: "BrandDragon – Lifestyle Reviews for the Modern Professional",
   description: "Real reviews for real life. We test the gear and tools that power the modern professional.",
   icons: {
