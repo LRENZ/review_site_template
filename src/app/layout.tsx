@@ -6,7 +6,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterPopup from "@/components/NewsletterPopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://branddragon.com"),
@@ -41,7 +40,6 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
-              <NewsletterPopup />
               <Toaster />
               <GoogleTagManager gtmId="GTM-MVC3ZSFP" />
             </div>

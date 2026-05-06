@@ -29,10 +29,37 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import ProductConversionPopup, {
+  type ProductConversionPopupConfig,
+} from "@/components/ProductConversionPopup";
 
 const affiliateLink = "https://mainfuncpteltd.sjv.io/7XmrDV";
 
 const ctaLabel = "Try Genspark Today";
+
+const gensparkPopupConfig: ProductConversionPopupConfig = {
+  productId: "genspark",
+  productName: "Genspark",
+  rating: "4.7/5",
+  headline: "Before you leave, test Genspark on one real deliverable.",
+  description:
+    "Use it for the kind of work that normally eats an hour or more: a pitch deck, research brief, campaign plan, proposal, or client-ready draft.",
+  bullets: [
+    "Best fit when your AI workflow needs finished assets, not another blank chat thread.",
+    "Try one high-value task first so the tool proves its value against your actual workload.",
+    "Strong match for creators, marketers, founders, agencies, and operators shipping weekly output.",
+  ],
+  ctaLabel,
+  ctaHref: affiliateLink,
+  disclosure:
+    "Affiliate disclosure: BrandDragon may earn a commission if you sign up through this link.",
+  storageKey: "product-popup:genspark",
+  banner: {
+    eyebrow: "Genspark deal",
+    headline: "AI workspace for finished deliverables",
+    description: "Try the tool behind the 4.7/5 BrandDragon verdict.",
+  },
+};
 
 export const metadata: Metadata = {
   title: "Genspark Review 2026: Is This AI Workspace Worth It? | BrandDragon",
@@ -476,11 +503,12 @@ export default function GensparkReviewPage() {
         <div className="mx-auto flex max-w-lg items-center gap-3">
           <div className="min-w-0 flex-1">
             <div className="truncate text-sm font-bold">Genspark AI Workspace</div>
-            <div className="text-xs text-muted-foreground">4.7/5 · Best for finished deliverables</div>
+            <div className="text-xs text-muted-foreground">4.7/5 - Best for finished deliverables</div>
           </div>
           <CtaButton className="h-11 shrink-0 rounded-full px-4 text-sm font-bold" />
         </div>
       </div>
+      <ProductConversionPopup config={gensparkPopupConfig} />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import NewsletterPopup from "@/components/NewsletterPopup";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -11,7 +10,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Footer />
-      <NewsletterPopup />
       <Toaster />
     </div>
   );
