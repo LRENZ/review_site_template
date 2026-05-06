@@ -3,11 +3,11 @@ import { collections } from "@/data/collections";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { Cpu, Shirt, Sparkles, ArrowRight, Star } from "lucide-react";
+import { Cpu, Shirt, Sparkles, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 // Feature Selection
-const mainFeature = reviews.find(r => r.slug === 'patagonia-better-sweater') || reviews[0];
+const mainFeature = reviews.find(r => r.slug === 'genspark') || reviews[0];
 const subFeatures = [
   reviews.find(r => r.slug === 'nike-pegasus-40'),
   reviews.find(r => r.slug === 'ag1-athletic-greens'),
@@ -51,7 +51,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl text-white">
                   <Badge className="mb-4 bg-black/50 text-white backdrop-blur border-none hover:bg-white/30">
-                    Review of the Week
+                    Featured AI Review
                   </Badge>
                   <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 leading-tight">
                     {mainFeature.title}
