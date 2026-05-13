@@ -37,7 +37,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-foreground">Terms of Use</Link></li>
-              <li><Link href="/disclosure" className="hover:text-foreground">Affiliate Disclosure</Link></li>
             </ul>
           </div>
         </div>
@@ -46,9 +45,6 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} BrandDragon. All rights reserved.</p>
-          <p className="max-w-md text-center md:text-right">
-            BrandDragon participates in various affiliate marketing programs, which means we may get paid commissions on editorially chosen products purchased through our links to retailer sites.
-          </p>
         </div>
       </div>
     </footer>

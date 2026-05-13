@@ -36,28 +36,27 @@ import ProductConversionPopup, {
 const affiliateLink = "https://mainfuncpteltd.sjv.io/7XmrDV";
 
 const ctaLabel = "Try Genspark Today";
+const ctaMicrocopy = "Generate a deck, brief, or proposal first.";
 
 const gensparkPopupConfig: ProductConversionPopupConfig = {
   productId: "genspark",
   productName: "Genspark",
   rating: "4.7/5",
-  headline: "Before you leave, test Genspark on one real deliverable.",
+  headline: "Before you leave, turn one idea into a finished PPT draft.",
   description:
-    "Use it for the kind of work that normally eats an hour or more: a pitch deck, research brief, campaign plan, proposal, or client-ready draft.",
+    "Use Genspark for the kind of work that normally eats an hour or more: a pitch deck, research brief, campaign plan, proposal, or client-ready draft.",
   bullets: [
     "Best fit when your AI workflow needs finished assets, not another blank chat thread.",
-    "Try one high-value task first so the tool proves its value against your actual workload.",
+    "Start with a deck or proposal prompt so the tool proves its value against your actual workload.",
     "Strong match for creators, marketers, founders, agencies, and operators shipping weekly output.",
   ],
   ctaLabel,
   ctaHref: affiliateLink,
-  disclosure:
-    "Affiliate disclosure: BrandDragon may earn a commission if you sign up through this link.",
   storageKey: "product-popup:genspark",
   banner: {
-    eyebrow: "Genspark deal",
-    headline: "AI workspace for finished deliverables",
-    description: "Try the tool behind the 4.7/5 BrandDragon verdict.",
+    eyebrow: "PPT generator test",
+    headline: "Turn one rough idea into a presentation draft",
+    description: "4.7/5 BrandDragon verdict for finished business deliverables.",
   },
 };
 
@@ -77,9 +76,15 @@ export const metadata: Metadata = {
 };
 
 const proofPoints = [
+  "Fastest value test: generate one pitch deck or business presentation",
   "AI workspace for research, slides, docs, images, videos, calls, and workflow output",
-  "Super Agent approach built for outcomes instead of plain chat responses",
   "Useful for marketers, creators, agencies, founders, and busy operators",
+];
+
+const ctaHighlights = [
+  "No blank deck",
+  "PPT + research",
+  "Business-ready draft",
 ];
 
 const useCases = [
@@ -144,10 +149,11 @@ const cautions = [
 ];
 
 const comparisons = [
-  ["Genspark", "Multi-format deliverables and agent-style task execution", "Best when the goal is finished work"],
-  ["ChatGPT / Claude", "Deep reasoning, coding, writing, and conversation", "Best when you want a flexible thinking partner"],
-  ["Perplexity", "Fast research with source-aware answers", "Best when you mainly need answer-engine style research"],
-  ["Canva / deck tools", "Design polish and brand templates", "Best when visuals are more important than agent workflows"],
+  ["Genspark", "AI workspace for slides, docs, research, calls, and agent-style workflows", "Best when a deck is part of a broader business deliverable"],
+  ["Gamma", "Prompt-to-deck builder with polished page-style presentation layouts", "Best when you mainly need a fast, visual PPT-style draft"],
+  ["Tome", "Narrative-first AI deck creation for pitch and sales stories", "Best when the deck needs a clear storyline more than a full workflow"],
+  ["Beautiful.ai", "Smart slide templates with layout and brand consistency guardrails", "Best when polished slide design matters most"],
+  ["Canva Presentations", "Design-first presentation builder with templates, media, and brand kits", "Best when visuals and reusable creative assets are the priority"],
 ];
 
 const faqs = [
@@ -181,6 +187,18 @@ function CtaButton({ className }: { className?: string }) {
         <ExternalLink data-icon="inline-end" />
       </a>
     </Button>
+  );
+}
+
+function CtaProofStrip() {
+  return (
+    <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-muted-foreground">
+      {ctaHighlights.map((item) => (
+        <span key={item} className="rounded-full border bg-background px-3 py-1">
+          {item}
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -226,6 +244,7 @@ export default function GensparkReviewPage() {
                 <ArrowRight data-icon="inline-end" />
               </a>
             </div>
+            <p className="text-sm font-medium text-lime-100/82">{ctaMicrocopy}</p>
 
             <div className="grid gap-3 text-sm text-white/72 sm:grid-cols-3">
               {proofPoints.map((point) => (
@@ -353,12 +372,33 @@ export default function GensparkReviewPage() {
                 </div>
                 <Separator />
                 <CtaButton className="h-12 rounded-full text-base font-bold" />
-                <p className="text-center text-xs leading-5 text-muted-foreground">
-                  Affiliate disclosure: BrandDragon may earn a commission if you sign up through this link.
-                </p>
+                <CtaProofStrip />
               </CardContent>
             </Card>
           </aside>
+        </div>
+      </section>
+
+      <section className="bg-background pb-16 md:pb-20">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid gap-6 overflow-hidden rounded-2xl border bg-[#07111f] p-6 text-white shadow-2xl md:grid-cols-[1fr_auto] md:items-center md:p-8">
+            <div>
+              <div className="mb-3 flex items-center gap-2 text-lime-200">
+                <Presentation />
+                <span className="text-sm font-bold uppercase tracking-[.18em]">Best first test</span>
+              </div>
+              <h2 className="text-2xl font-bold leading-tight md:text-4xl">
+                Ask Genspark to create one sales deck from your rough idea.
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-white/68 md:text-base">
+                If the first draft saves you research, outline, and slide-building time, you will know quickly whether it deserves a place in your workflow.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 md:min-w-[260px]">
+              <CtaButton className="h-14 rounded-full bg-lime-300 px-7 text-base font-bold text-[#07111f] hover:bg-lime-200" />
+              <p className="text-center text-xs text-white/50">{ctaMicrocopy}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -432,9 +472,9 @@ export default function GensparkReviewPage() {
       <section className="bg-background py-16 md:py-20">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-10 max-w-3xl">
-            <h2 className="text-3xl font-bold md:text-5xl">Genspark vs. common alternatives</h2>
+            <h2 className="text-3xl font-bold md:text-5xl">Genspark vs. AI presentation builders</h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              The buying question is not whether Genspark can chat. It is whether its broader workspace saves enough production time to replace or reduce other tools.
+              Compare it with Gamma-style PPT generation tools when the decision is about faster decks, polished slides, and finished business assets.
             </p>
           </div>
 
@@ -445,8 +485,18 @@ export default function GensparkReviewPage() {
               <div>When to choose it</div>
             </div>
             {comparisons.map(([tool, strength, fit]) => (
-              <div key={tool} className="grid grid-cols-1 gap-2 border-b px-5 py-5 last:border-b-0 md:grid-cols-[1fr_1.4fr_1.3fr] md:gap-6">
-                <div className="font-bold">{tool}</div>
+              <div
+                key={tool}
+                className={`grid grid-cols-1 gap-2 border-b px-5 py-5 last:border-b-0 md:grid-cols-[1fr_1.4fr_1.3fr] md:gap-6 ${
+                  tool === "Genspark" ? "bg-lime-50" : ""
+                }`}
+              >
+                <div className="flex flex-col gap-3 font-bold">
+                  <span>{tool}</span>
+                  {tool === "Genspark" && (
+                    <CtaButton className="h-10 w-fit rounded-full bg-lime-300 px-4 text-sm font-bold text-[#07111f] hover:bg-lime-200" />
+                  )}
+                </div>
                 <div className="leading-7 text-muted-foreground">{strength}</div>
                 <div className="leading-7 text-muted-foreground">{fit}</div>
               </div>

@@ -17,7 +17,6 @@ export default function sitemap(): SitemapItem[] {
     '/contact', 
     '/privacy', 
     '/terms', 
-    '/disclosure',
     '/category/market',
     '/category/digital'
   ].map(route => ({

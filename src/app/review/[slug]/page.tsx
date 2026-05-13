@@ -237,7 +237,6 @@ export default async function ReviewDetail({ params }: Props) {
               <p>
                 <strong>Independent Advice:</strong> We purchase our own products for testing.
                 We never accept payment for positive reviews.
-                <Link href="/disclosure" className="underline hover:text-foreground">Read our full ethics statement.</Link>
               </p>
             </div>
           </div>

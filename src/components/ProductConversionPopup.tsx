@@ -28,7 +28,7 @@ export type ProductConversionPopupConfig = {
   bullets: string[];
   ctaLabel: string;
   ctaHref: string;
-  disclosure: string;
+  disclosure?: string;
   storageKey: string;
   banner: ProductPopupBannerConfig;
 };
@@ -182,9 +182,11 @@ export default function ProductConversionPopup({
                   <ExternalLink data-icon="inline-end" />
                 </a>
               </Button>
-              <p className="text-center text-xs leading-5 text-muted-foreground">
-                {config.disclosure}
-              </p>
+              {config.disclosure && (
+                <p className="text-center text-xs leading-5 text-muted-foreground">
+                  {config.disclosure}
+                </p>
+              )}
             </DialogFooter>
           </div>
         </DialogContent>
