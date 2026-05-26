@@ -38,7 +38,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Generate Static Params for SSG
 export async function generateStaticParams() {
   return reviews
-    .filter((review) => review.slug !== "genspark")
+    .filter(
+      (review) =>
+        !["genspark", "vacations-by-marriott-bonvoy", "levis"].includes(
+          review.slug
+        )
+    )
     .map((review) => ({
       slug: review.slug,
     }));

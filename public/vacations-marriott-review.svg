@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Vacations by Marriott Bonvoy review artwork</title>
+  <desc id="desc">Editorial travel package dashboard with tropical destination cards and Marriott Bonvoy points cues.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="0.52" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#083344" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="#061826"/>
+  <circle cx="960" cy="120" r="260" fill="#facc15" opacity="0.22"/>
+  <circle cx="180" cy="760" r="340" fill="#22d3ee" opacity="0.18"/>
+  <rect x="76" y="72" width="1048" height="756" rx="56" fill="url(#sky)"/>
+  <path d="M76 614c112-62 216-83 312-63 109 23 175 94 308 89 137-5 205-88 315-81 45 3 82 20 113 42v227H76z" fill="#f8fafc" opacity="0.72"/>
+  <path d="M76 676c104-34 214-42 330-24 141 22 240 88 387 65 122-19 204-77 331-59v170H76z" fill="#fef3c7"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="150" width="900" height="520" rx="36" fill="url(#card)"/>
+    <rect x="192" y="202" width="296" height="392" rx="28" fill="#075985"/>
+    <path d="M192 425c64-38 117-50 160-36 48 16 76 61 136 42v163H192z" fill="#38bdf8"/>
+    <circle cx="285" cy="292" r="58" fill="#fbbf24"/>
+    <path d="M274 442c25-76 65-121 119-136-33 50-43 103-29 159" fill="none" stroke="#f8fafc" stroke-width="18" stroke-linecap="round"/>
+    <path d="M232 457c58-62 126-91 204-87" fill="none" stroke="#f8fafc" stroke-width="18" stroke-linecap="round"/>
+    <text x="532" y="242" fill="#0f172a" font-family="Arial, sans-serif" font-size="46" font-weight="800">Vacation Package</text>
+    <text x="532" y="292" fill="#334155" font-family="Arial, sans-serif" font-size="26">Hotel + flight + points planning</text>
+    <rect x="532" y="338" width="198" height="64" rx="20" fill="#e0f2fe"/>
+    <text x="560" y="379" fill="#0369a1" font-family="Arial, sans-serif" font-size="24" font-weight="700">Room</text>
+    <rect x="752" y="338" width="198" height="64" rx="20" fill="#ecfccb"/>
+    <text x="782" y="379" fill="#3f6212" font-family="Arial, sans-serif" font-size="24" font-weight="700">Flight</text>
+    <rect x="532" y="438" width="418" height="86" rx="24" fill="#0f172a"/>
+    <text x="566" y="492" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="800">Find My Vacation</text>
+    <rect x="532" y="558" width="124" height="28" rx="14" fill="#facc15"/>
+    <rect x="676" y="558" width="178" height="28" rx="14" fill="#14b8a6"/>
+    <rect x="874" y="558" width="76" height="28" rx="14" fill="#38bdf8"/>
+  </g>
+</svg>
