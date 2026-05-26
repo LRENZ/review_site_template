@@ -3,7 +3,7 @@ import { collections } from "@/data/collections";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { Presentation, Shirt, Sparkles, ArrowRight } from "lucide-react";
+import { Shirt, Sparkles, ArrowRight, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 
 // Feature Selection
@@ -14,50 +14,58 @@ const subFeatures = [
   reviews.find(r => r.slug === 'dyson-v15-detect')
 ].filter(Boolean);
 
-const presentationToolComparisons = [
-  {
-    name: "Genspark",
-    label: "AI workspace",
-    rating: "4.7/5",
-    strength: "Creates slides, docs, research, calls, and workflow outputs from one workspace.",
-    fit: "Best when your PPT is part of a broader finished deliverable.",
-    href: "/review/genspark",
-    cta: "Read Review",
-    featured: true,
+const featuredReviewCards = [
+  reviews.find(r => r.slug === 'genspark'),
+  reviews.find(r => r.slug === 'shapellx'),
+  reviews.find(r => r.slug === 'levis'),
+  reviews.find(r => r.slug === 'vacations-by-marriott-bonvoy'),
+].filter(Boolean).map((review) => ({
+  name: review!.title,
+  label: review!.subCategory,
+  rating: `${review!.rating.toFixed(1)}/5`,
+  strength: review!.editorialVerdict,
+  fit: review!.buyingAdvice,
+  href: `/review/${review!.slug}`,
+  image: review!.thumbnailUrl,
+  cta: review!.slug === 'vacations-by-marriott-bonvoy' ? 'Read Marriott Review' : `Read ${review!.title} Review`,
+  featured: review!.slug === 'genspark',
+}));
+
+const featuredReviewCopy: Record<string, { strength: string; fit: string; cta: string }> = {
+  genspark: {
+    strength: "AI workspace for slides, docs, research, calls, and finished business deliverables.",
+    fit: "Best when you want to test one high-value AI workflow before subscribing.",
+    cta: "Read Genspark Review",
   },
-  {
-    name: "Gamma",
-    label: "PPT generator",
-    rating: "Deck-first",
-    strength: "Turns prompts into polished, page-style presentations quickly.",
-    fit: "Best when you mainly need a fast visual deck draft.",
-    cta: "Fast Decks",
+  shapellx: {
+    strength: "Shapewear, bodysuits, swim, bras, and support pieces organized around fit and compression.",
+    fit: "Best when you have a real outfit need and want to compare support levels.",
+    cta: "Read Shapellx Review",
   },
-  {
-    name: "Tome",
-    label: "Story deck tool",
-    rating: "Narrative-first",
-    strength: "Builds story-led decks for pitches, sales narratives, and explainers.",
-    fit: "Best when structure and storytelling matter most.",
-    cta: "Story Decks",
+  levis: {
+    strength: "Classic denim, 501-style jeans, trucker jackets, tees, and everyday wardrobe staples.",
+    fit: "Best when you want a familiar fit, wash, and sale-price check before buying denim.",
+    cta: "Read Levi's Review",
   },
-  {
-    name: "Beautiful.ai",
-    label: "Smart slides",
-    rating: "Design-first",
-    strength: "Uses smart templates and layout rules to keep slides polished.",
-    fit: "Best when brand-safe slide design is the priority.",
-    cta: "Polished Slides",
+  "vacations-by-marriott-bonvoy": {
+    strength: "Hotel + flight vacation package discovery with Marriott brand familiarity and points upside.",
+    fit: "Best when you want to compare a real trip package before booking separately.",
+    cta: "Read Marriott Review",
   },
-];
+};
+
+const featuredReviews = featuredReviewCards.map((card) => ({
+  ...card,
+  ...featuredReviewCopy[card.href.replace("/review/", "")],
+}));
 
 const recentReviews = reviews.slice(8, 16); 
 
-type PresentationToolComparison = (typeof presentationToolComparisons)[number];
+type FeaturedReviewCard = (typeof featuredReviews)[number];
 
-function PresentationToolCard({ tool }: { tool: PresentationToolComparison }) {
+function FeaturedReviewCard({ review }: { review: FeaturedReviewCard }) {
   const cardClassName = `group flex min-h-[280px] flex-col rounded-xl border p-5 transition-all ${
-    tool.featured
+    review.featured
       ? "border-lime-300/45 bg-lime-300/10 shadow-2xl shadow-lime-950/20 hover:-translate-y-1 hover:bg-lime-300/15"
       : "border-white/10 bg-white/5 hover:bg-white/10"
   }`;
@@ -66,39 +74,43 @@ function PresentationToolCard({ tool }: { tool: PresentationToolComparison }) {
     <>
       <div className="mb-4 flex items-center justify-between gap-3">
         <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[.14em] text-blue-200">
-          {tool.label}
+          {review.label}
         </span>
-        <span className="text-xs font-bold text-white/58">{tool.rating}</span>
+        <span className="text-xs font-bold text-white/58">{review.rating}</span>
+      </div>
+      <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-lg bg-white/8">
+        <Image
+          src={review.image}
+          alt={review.name}
+          fill
+          className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
       <h4 className="text-2xl font-serif font-bold leading-tight text-white">
-        {tool.name}
+        {review.name}
       </h4>
-      <p className="mt-4 text-sm leading-6 text-white/72">{tool.strength}</p>
-      <p className="mt-3 text-sm leading-6 text-white/50">{tool.fit}</p>
+      <p className="mt-4 text-sm leading-6 text-white/72">{review.strength}</p>
+      <p className="mt-3 text-sm leading-6 text-white/50">{review.fit}</p>
       <div className="mt-auto pt-6">
         <div
           className={`flex h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-bold ${
-            tool.featured
+            review.featured
               ? "bg-lime-300 text-[#07111f] group-hover:bg-lime-200"
               : "border border-white/15 text-white/70"
           }`}
         >
-          {tool.cta}
-          {tool.featured && <ArrowRight className="w-4 h-4" />}
+          {review.cta}
+          {review.featured && <ArrowRight className="w-4 h-4" />}
         </div>
       </div>
     </>
   );
 
-  if (tool.href) {
-    return (
-      <Link href={tool.href} className={cardClassName}>
-        {content}
-      </Link>
-    );
-  }
-
-  return <div className={cardClassName}>{content}</div>;
+  return (
+    <Link href={review.href} className={cardClassName}>
+      {content}
+    </Link>
+  );
 }
 
 export default function Home() {
@@ -222,31 +234,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Presentation Tool Comparison */}
+      {/* Featured Partner Reviews */}
       <section className="py-20 bg-[#0f172a] text-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col gap-6 md:flex-row md:justify-between md:items-end mb-12">
             <div>
               <div className="flex items-center gap-2 mb-2 text-blue-400">
-                <Presentation className="w-5 h-5" />
-                <span className="font-bold uppercase tracking-wider">AI Presentation Tools</span>
+                <ShoppingBag className="w-5 h-5" />
+                <span className="font-bold uppercase tracking-wider">Featured Review Cards</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Genspark vs. PPT Generators</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">High-Intent Reviews to Compare</h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-white/68">
-                Compare Genspark with Gamma-style tools built for AI-generated decks, polished slides, and faster presentation drafts.
+                Start with the four pages built for the strongest purchase intent: Genspark, Shapellx, Levi's, and Vacations by Marriott Bonvoy.
               </p>
             </div>
             <Button variant="outline" className="hidden md:flex bg-lime-300 text-[#07111f] border-lime-300 hover:bg-lime-200 hover:text-[#07111f]" asChild>
-              <Link href="/review/genspark">
-                Compare Genspark
+              <Link href="/review/shapellx">
+                Compare Shapellx
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {presentationToolComparisons.map((tool) => (
-              <PresentationToolCard key={tool.name} tool={tool} />
+            {featuredReviews.map((review) => (
+              <FeaturedReviewCard key={review.name} review={review} />
             ))}
           </div>
         </div>

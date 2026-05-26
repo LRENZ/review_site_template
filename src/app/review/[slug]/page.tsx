@@ -40,9 +40,12 @@ export async function generateStaticParams() {
   return reviews
     .filter(
       (review) =>
-        !["genspark", "vacations-by-marriott-bonvoy", "levis"].includes(
-          review.slug
-        )
+        ![
+          "genspark",
+          "vacations-by-marriott-bonvoy",
+          "shapellx",
+          "levis",
+        ].includes(review.slug)
     )
     .map((review) => ({
       slug: review.slug,

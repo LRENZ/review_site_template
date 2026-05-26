@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Shapellx review artwork</title>
+  <desc id="desc">Editorial shapewear review artwork with sculpting bodysuit, support levels, and wardrobe cards.</desc>
+  <defs>
+    <linearGradient id="rose" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#be185d"/>
+      <stop offset="0.52" stop-color="#e11d48"/>
+      <stop offset="1" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#ffe4e6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#4a044e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="#160914"/>
+  <circle cx="236" cy="150" r="280" fill="#f9a8d4" opacity="0.18"/>
+  <circle cx="988" cy="740" r="300" fill="#fb7185" opacity="0.18"/>
+  <rect x="76" y="72" width="1048" height="756" rx="56" fill="url(#rose)"/>
+  <path d="M84 658c98-56 191-72 279-48 119 32 169 114 300 88 131-25 176-133 303-113 63 10 112 43 158 86v157H84z" fill="#fff1f2" opacity="0.66"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="142" width="900" height="616" rx="40" fill="url(#cream)"/>
+    <rect x="214" y="210" width="316" height="430" rx="42" fill="#831843"/>
+    <path d="M332 236c-33 52-48 108-45 168 3 73 35 122 42 192h86c7-70 39-119 42-192 3-60-12-116-45-168z" fill="#fce7f3"/>
+    <path d="M335 236h74M326 596h92" stroke="#fb7185" stroke-width="12" stroke-linecap="round"/>
+    <path d="M292 392c53 28 106 28 159 0" stroke="#be185d" stroke-width="12" stroke-linecap="round" opacity="0.48"/>
+    <text x="586" y="245" fill="#0f172a" font-family="Arial, sans-serif" font-size="46" font-weight="900">SHAPELLX REVIEW</text>
+    <text x="586" y="304" fill="#475569" font-family="Arial, sans-serif" font-size="26">Shapewear, swim, bras, activewear</text>
+    <rect x="586" y="362" width="136" height="54" rx="18" fill="#fce7f3"/>
+    <text x="616" y="397" fill="#be185d" font-family="Arial, sans-serif" font-size="22" font-weight="800">Light</text>
+    <rect x="742" y="362" width="124" height="54" rx="18" fill="#ffe4e6"/>
+    <text x="774" y="397" fill="#be123c" font-family="Arial, sans-serif" font-size="22" font-weight="800">Mid</text>
+    <rect x="886" y="362" width="104" height="54" rx="18" fill="#fecdd3"/>
+    <text x="912" y="397" fill="#9f1239" font-family="Arial, sans-serif" font-size="22" font-weight="800">Firm</text>
+    <rect x="586" y="472" width="404" height="74" rx="24" fill="#0f172a"/>
+    <text x="632" y="520" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="900">Find your support level</text>
+    <rect x="586" y="594" width="108" height="26" rx="13" fill="#fb7185"/>
+    <rect x="714" y="594" width="154" height="26" rx="13" fill="#f43f5e"/>
+    <rect x="888" y="594" width="102" height="26" rx="13" fill="#be185d"/>
+  </g>
+</svg>
