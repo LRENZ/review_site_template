@@ -9,7 +9,7 @@ export default function Privacy() {
   return (
     <TextPageLayout title="Privacy Policy" lastUpdated="January 1, 2026">
       <p>
-        At BrandDragon, accessible from branddragon.com, one of our main priorities is the privacy of our visitors. 
+        At BrandDragon, accessible from branddragon.net, one of our main priorities is the privacy of our visitors. 
         This Privacy Policy document contains types of information that is collected and recorded by BrandDragon and how we use it.
       </p>
 

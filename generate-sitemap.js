@@ -25,7 +25,7 @@ try {
   const reviewSlugs = extractSlugs(reviewsContent);
   const collectionSlugs = extractSlugs(collectionsContent);
 
-  const baseUrl = 'https://dailychoice.com';
+  const baseUrl = 'https://branddragon.net';
   const date = new Date().toISOString().split('T')[0];
 
   const staticRoutes = [
@@ -34,7 +34,6 @@ try {
     '/contact',
     '/privacy',
     '/terms',
-    '/disclosure',
     '/category/market',
     '/category/digital'
   ];

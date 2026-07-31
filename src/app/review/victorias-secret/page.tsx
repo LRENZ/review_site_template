@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BedDouble, BriefcaseBusiness, Gift, Heart, Moon, ShoppingBag, Sparkles, Waves } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
 
-const affiliateLink = "https://www.victoriassecret.com/us/";
+const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=e3b0SXCYjPfSg3qKgB9EU_aXGVmfP1Ki3_boupqc6lbGXxWFQk_a3tEWz5gR00XLF4QJNIx7RVSihY73OPMll6rJJ_bw_alX2hJD6i_aCruQ_c_c&new=https%3A%2F%2Fwww.victoriassecret.ae%2Fen%2F";
 
 export const metadata: Metadata = {
   title: "Victoria's Secret Review 2026: Bras, Lingerie, Beauty, Sleep, and Activewear | BrandDragon",

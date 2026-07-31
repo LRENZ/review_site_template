@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BriefcaseBusiness, Gem, Layers3, Plane, Shirt, Sparkles, Star, Waves } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
 
-const affiliateLink = "https://normakamali.com/";
+const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=4a30HD9R_anFxhNWwcuAfxXOyUWTZpVjssZFgGgSOAwNisI9bLcWOtCXI4i27iUiMWjqz8RhX2KUr_a957ZoWc7ngXM_arJAyWAoXloSA_c_c&new=https%3A%2F%2Fnormakamali.com%2F";
 
 export const metadata: Metadata = {
   title: "NORMA KAMALI Review 2026: Dresses, Swim, Bodysuits, and Modern Classics | BrandDragon",

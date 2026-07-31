@@ -53,8 +53,8 @@ export default function Contact() {
               <Mail className="w-6 h-6 mt-1 text-muted-foreground" />
               <div>
                 <h3 className="font-bold">Email Us</h3>
-                <p className="text-muted-foreground">hello@dailychoice.com</p>
-                <p className="text-muted-foreground">partners@dailychoice.com</p>
+                <p className="text-muted-foreground">hello@branddragon.net</p>
+                <p className="text-muted-foreground">partners@branddragon.net</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

@@ -8,7 +8,7 @@ interface SitemapItem {
 }
 
 export default function sitemap(): SitemapItem[] {
-  const baseUrl = 'https://dailychoice.com'; // Placeholder domain
+  const baseUrl = 'https://branddragon.net';
 
   // 1. Static Pages
   const staticRoutes = [

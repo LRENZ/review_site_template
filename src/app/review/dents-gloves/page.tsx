@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BriefcaseBusiness, CheckCircle2, Hand, Laptop, ShieldCheck, Sparkles, Star, Sun } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
 
-const affiliateLink = "https://www.dentsgloves.com/";
+const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=1d4d29lXUhw_bNi0i_bpLpP7eFgS8lnBLIFE6XNhuEjDZUyxFWs0t0SpsR6nXEFXhyL85fvis9E22HYzwOEer_as8wNrJ4Y8pxn8I4vBQ_c_c&new=https%3A%2F%2Fus.dentsgloves.com%2F";
 
 export const metadata: Metadata = {
   title: "Dents Gloves Review 2026: British Leather, Cashmere Lining, and Touchscreen Gloves | BrandDragon",
