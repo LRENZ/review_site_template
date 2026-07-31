@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">NORMA KAMALI review artwork</title>
+  <desc id="desc">Editorial fashion review artwork with sculptural red dress, bodysuit, and swimwear cards.</desc>
+  <defs><linearGradient id="red" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#7f1d1d"/><stop offset=".55" stop-color="#dc2626"/><stop offset="1" stop-color="#fb7185"/></linearGradient><linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff7ed"/><stop offset="1" stop-color="#fee2e2"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#450a0a" flood-opacity=".35"/></filter></defs>
+  <rect width="1200" height="900" fill="#160b0b"/><circle cx="970" cy="180" r="260" fill="#fca5a5" opacity=".18"/><rect x="76" y="72" width="1048" height="756" rx="56" fill="url(#red)"/>
+  <path d="M80 650c160-70 290-55 420 22 151 89 281 71 420-17 78-49 139-52 204-22v195H80z" fill="#fff1f2" opacity=".65"/>
+  <g filter="url(#shadow)"><rect x="150" y="142" width="900" height="616" rx="40" fill="url(#paper)"/><rect x="214" y="210" width="306" height="430" rx="38" fill="#111827"/>
+    <path d="M365 242c-28 50-40 99-39 148 2 72-37 153-56 225h190c-19-72-58-153-56-225 1-49-11-98-39-148z" fill="#ef4444"/><path d="M317 258h96M278 612h174" stroke="#fecaca" stroke-width="10" stroke-linecap="round"/><circle cx="365" cy="214" r="26" fill="#fca5a5"/>
+    <text x="578" y="245" fill="#111827" font-family="Arial,sans-serif" font-size="48" font-weight="900">NORMA KAMALI</text><text x="578" y="302" fill="#475569" font-family="Arial,sans-serif" font-size="25">Sculptural fashion, swim, and easy movement</text>
+    <rect x="578" y="362" width="146" height="54" rx="18" fill="#fee2e2"/><text x="609" y="397" fill="#b91c1c" font-family="Arial,sans-serif" font-size="22" font-weight="800">Dresses</text><rect x="744" y="362" width="136" height="54" rx="18" fill="#fecaca"/><text x="775" y="397" fill="#991b1b" font-family="Arial,sans-serif" font-size="22" font-weight="800">Swim</text><rect x="900" y="362" width="90" height="54" rx="18" fill="#fca5a5"/><text x="918" y="397" fill="#7f1d1d" font-family="Arial,sans-serif" font-size="22" font-weight="800">Jersey</text>
+    <rect x="578" y="472" width="412" height="74" rx="24" fill="#111827"/><text x="623" y="520" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="900">Shop the silhouette</text><rect x="578" y="594" width="126" height="26" rx="13" fill="#fb7185"/><rect x="724" y="594" width="166" height="26" rx="13" fill="#ef4444"/><rect x="910" y="594" width="80" height="26" rx="13" fill="#b91c1c"/>
+  </g>
+</svg>

@@ -19,6 +19,9 @@ const featuredReviewCards = [
   reviews.find(r => r.slug === 'shapellx'),
   reviews.find(r => r.slug === 'levis'),
   reviews.find(r => r.slug === 'vacations-by-marriott-bonvoy'),
+  reviews.find(r => r.slug === 'norma-kamali'),
+  reviews.find(r => r.slug === 'dents-gloves'),
+  reviews.find(r => r.slug === 'victorias-secret'),
 ].filter(Boolean).map((review) => ({
   name: review!.title,
   label: review!.subCategory,
@@ -51,6 +54,21 @@ const featuredReviewCopy: Record<string, { strength: string; fit: string; cta: s
     strength: "Hotel + flight vacation package discovery with Marriott brand familiarity and points upside.",
     fit: "Best when you want to compare a real trip package before booking separately.",
     cta: "Read Marriott Review",
+  },
+  "norma-kamali": {
+    strength: "Sculptural dresses, swim, bodysuits, jersey, and modern designer wardrobe pieces.",
+    fit: "Best when the silhouette and occasion are the main reason to buy.",
+    cta: "Read NORMA KAMALI Review",
+  },
+  "dents-gloves": {
+    strength: "British leather gloves with cashmere, silk, touchscreen, driving, and Heritage options.",
+    fit: "Best when material, hand feel, craftsmanship, and classic styling matter.",
+    cta: "Read Dents Review",
+  },
+  "victorias-secret": {
+    strength: "Bras, panties, lingerie, sleep, beauty, swim, activewear, clothing, and gift categories.",
+    fit: "Best when you want several intimate and self-care categories in one store.",
+    cta: "Read Victoria's Secret Review",
   },
 };
 
@@ -245,7 +263,7 @@ export default function Home() {
               </div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">High-Intent Reviews to Compare</h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-white/68">
-                Start with the four pages built for the strongest purchase intent: Genspark, Shapellx, Levi's, and Vacations by Marriott Bonvoy.
+                Start with the pages built for high purchase intent across AI, fashion, accessories, travel, and intimates.
               </p>
             </div>
             <Button variant="outline" className="hidden md:flex bg-lime-300 text-[#07111f] border-lime-300 hover:bg-lime-200 hover:text-[#07111f]" asChild>

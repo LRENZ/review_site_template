@@ -44,6 +44,9 @@ export async function generateStaticParams() {
           "genspark",
           "vacations-by-marriott-bonvoy",
           "shapellx",
+          "norma-kamali",
+          "dents-gloves",
+          "victorias-secret",
           "levis",
         ].includes(review.slug)
     )
