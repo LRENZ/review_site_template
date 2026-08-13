@@ -35,7 +35,8 @@ try {
     '/privacy',
     '/terms',
     '/category/market',
-    '/category/digital'
+    '/category/digital',
+    '/offer/merach-s23'
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>

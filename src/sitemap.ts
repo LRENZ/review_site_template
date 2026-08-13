@@ -18,7 +18,8 @@ export default function sitemap(): SitemapItem[] {
     '/privacy', 
     '/terms', 
     '/category/market',
-    '/category/digital'
+    '/category/digital',
+    '/offer/merach-s23'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
