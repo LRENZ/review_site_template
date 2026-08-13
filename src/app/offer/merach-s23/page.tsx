@@ -27,8 +27,33 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import ProductConversionPopup, {
+  type ProductConversionPopupConfig,
+} from "@/components/ProductConversionPopup";
 
 const offerHref = "https://hongkongmerachtechnologycolimited.pxf.io/WO4gLM";
+
+const merachPopupConfig: ProductConversionPopupConfig = {
+  productId: "merach-s23",
+  productName: "MERACH S23",
+  rating: "Best for low-impact home cardio",
+  headline: "Before you go: see why the S23 is easier to keep using.",
+  description:
+    "A supported seat, eight resistance levels, and built-in arm bands turn one compact bike into a practical full-body routine.",
+  bullets: [
+    "Comfortable recumbent position with adjustable seat and backrest",
+    "Integrated resistance bands for upper-body movement while pedaling",
+    "Quiet magnetic resistance, workout tracking, and app compatibility",
+  ],
+  ctaLabel: "Check the S23 offer",
+  ctaHref: offerHref,
+  storageKey: "product-popup:merach-s23",
+  banner: {
+    eyebrow: "MERACH S23 offer",
+    headline: "Low-impact cardio plus upper-body resistance in one setup",
+    description: "Compare the current price, delivery, warranty, and availability.",
+  },
+};
 
 export const metadata: Metadata = {
   title: "MERACH S23 Recumbent Bike Review: Low-Impact Home Workout Offer | BrandDragon",
@@ -39,7 +64,7 @@ export const metadata: Metadata = {
     title: "MERACH S23 Recumbent Bike: A More Comfortable Way to Move at Home",
     description:
       "See how the S23 combines seated cardio, resistance bands, adjustable comfort, and a compact home-workout setup.",
-    images: ["/merach-s23-offer.png"],
+    images: ["/merach-s23-lifestyle.jpg"],
   },
 };
 
@@ -148,24 +173,24 @@ export default function MerachS23OfferPage() {
     <>
       <main className="bg-[#f7f4ef] text-[#182126]">
         <section className="relative overflow-hidden bg-[#122127] text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_12%,rgba(48,184,217,.24),transparent_28%),radial-gradient(circle_at_15%_78%,rgba(217,136,61,.18),transparent_30%)]" />
-          <div className="container relative mx-auto max-w-6xl px-4 py-6 md:py-10">
-            <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-white/65 hover:text-white">
+          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(14,145,175,.18),transparent_42%,rgba(226,150,78,.12))]" />
+          <div className="container relative mx-auto max-w-7xl px-4 py-5 sm:px-6 md:py-8 lg:px-8">
+            <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors hover:text-white">
               <ChevronRight data-icon="inline-start" />
               BrandDragon Offer Guide
             </Link>
 
-            <div className="grid items-center gap-10 py-10 md:grid-cols-[.9fr_1.1fr] md:py-16">
-              <div className="flex flex-col gap-6">
+            <div className="grid items-center gap-10 py-8 lg:min-h-[680px] lg:grid-cols-[minmax(0,.82fr)_minmax(520px,1.18fr)] lg:gap-14 lg:py-10">
+              <div className="flex flex-col gap-5">
                 <div className="flex flex-wrap gap-3">
                   <Badge className="border-cyan-200/25 bg-cyan-200/15 text-cyan-100 hover:bg-cyan-200/15">MERACH S23</Badge>
                   <Badge className="border-orange-200/25 bg-orange-200/15 text-orange-100 hover:bg-orange-200/15">Low-impact home fitness</Badge>
                 </div>
-                <h1 className="max-w-2xl text-5xl font-bold leading-[.95] tracking-tight md:text-7xl">
-                  A more comfortable way to move at home.
+                <h1 className="max-w-2xl text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-[64px]">
+                  Comfortable cardio, built for real life at home.
                 </h1>
-                <p className="max-w-xl text-lg leading-8 text-white/72 md:text-xl">
-                  The MERACH S23 combines a supported recumbent ride with resistance bands, giving you a practical way to build cardio and light upper-body work into your everyday routine.
+                <p className="max-w-xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">
+                  The S23 pairs a supported recumbent ride with resistance bands, so you can train your legs and add light upper-body work in one quiet home session.
                 </p>
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                   <OfferCta className="h-14 rounded-full bg-cyan-300 px-7 text-base font-bold text-[#06212a] shadow-2xl shadow-cyan-300/20 hover:bg-cyan-200" />
@@ -186,10 +211,26 @@ export default function MerachS23OfferPage() {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="absolute -inset-6 rounded-[36px] bg-cyan-300/15 blur-3xl" />
-                <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/8 p-3 shadow-2xl">
-                  <Image src="/merach-s23-offer.png" alt="MERACH S23 recumbent bike with resistance bands offer" width={1200} height={900} priority className="w-full rounded-[20px] object-cover" />
+              <div className="relative mx-auto w-full max-w-2xl">
+                <div className="absolute -inset-5 rounded-[28px] bg-cyan-300/10 blur-3xl" />
+                <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white shadow-2xl">
+                  <div className="relative aspect-square">
+                    <Image
+                      src="/merach-s23-lifestyle.jpg"
+                      alt="MERACH S23 recumbent bike used with its resistance bands"
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 55vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-black/8 bg-white/94 px-4 py-3 text-[#182126] shadow-lg backdrop-blur">
+                    <div>
+                      <p className="text-sm font-bold">Full-body movement from a supported seat</p>
+                      <p className="mt-0.5 text-xs text-[#657078]">Pedal, pull, and track your routine in one place.</p>
+                    </div>
+                    <Badge className="bg-[#dff6fa] text-[#087993] hover:bg-[#dff6fa]">8 resistance levels</Badge>
+                  </div>
                 </div>
               </div>
             </div>
@@ -222,6 +263,30 @@ export default function MerachS23OfferPage() {
           </div>
         </section>
 
+        <section className="border-y border-[#d9d1c6] bg-[#fffdf9] py-14 md:py-20">
+          <div className="container mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-sm">
+              <Image
+                src="/merach-s23-training.jpg"
+                alt="MERACH S23 showing its recumbent seat, pedals, display, and resistance bands"
+                fill
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-contain p-3"
+              />
+            </div>
+            <div>
+              <div className="mb-4 flex items-center gap-2 text-[#0e91af]"><BadgeCheck /><span className="text-sm font-bold uppercase tracking-[.18em]">See the full setup</span></div>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">One machine, two ways to move.</h2>
+              <p className="mt-5 text-lg leading-8 text-[#657078]">Use the pedals for steady low-impact cardio, then bring in the built-in bands when you want your arms and shoulders involved. The supportive seat keeps the setup approachable for everyday sessions.</p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {["350 lb maximum capacity", "LCD and heart-rate tracking", "Merach, Kinomap, and Zwift support", "Front wheels for easier moving"].map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm font-semibold"><Check className="mt-0.5 shrink-0 text-[#0e91af]" />{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="comparison" className="bg-[#172b31] py-16 text-white md:py-24">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="mb-10 max-w-3xl"><div className="mb-4 flex items-center gap-2 text-cyan-300"><Waves /><span className="text-sm font-bold uppercase tracking-[.18em]">Compare the use case</span></div><h2 className="text-4xl font-bold leading-tight md:text-6xl">Which workout setup fits your life?</h2><p className="mt-5 text-lg leading-8 text-white/65">The S23 is not trying to be every machine. It is strongest when comfort and repeatability matter more than maximum intensity.</p></div>
@@ -250,6 +315,7 @@ export default function MerachS23OfferPage() {
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#d9d1c6] bg-[#fffdf9]/95 p-3 shadow-2xl backdrop-blur md:hidden"><div className="mx-auto flex max-w-lg items-center gap-3"><div className="min-w-0 flex-1"><div className="truncate text-sm font-bold">MERACH S23 Recumbent Bike</div><div className="text-xs text-[#657078]">Low-impact cardio + resistance bands</div></div><OfferCta className="h-11 shrink-0 rounded-full bg-[#0e91af] px-4 text-sm font-bold text-white hover:bg-[#087993]" /></div></div>
+      <ProductConversionPopup config={merachPopupConfig} />
     </>
   );
 }
