@@ -6,13 +6,14 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SITE_ORIGIN, withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://branddragon.net"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: "BrandDragon – Lifestyle Reviews for the Modern Professional",
   description: "Real reviews for real life. We test the gear and tools that power the modern professional.",
   icons: {
-    icon: "/favicon.png",
+    icon: withBasePath("/favicon.png"),
   },
 };
 

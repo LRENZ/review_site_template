@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import aboutTeam from "@/assets/about_team.jpg";
 import Image from "next/image";
 import { Metadata } from "next";
+import { absoluteSiteUrl, withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us | BrandDragon",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About BrandDragon - Real Reviews for Modern Professionals",
     description: "Meet the team of obsessively curious editors, testers, and tech enthusiasts dedicated to finding tools that improve your life.",
-    url: "https://branddragon.net/about",
+    url: absoluteSiteUrl("/about"),
     siteName: "BrandDragon",
     locale: "en_US",
     type: "website",
@@ -92,8 +93,13 @@ export default function About() {
 
             <div className="mt-16 text-center">
               <div className="relative w-32 h-32 mx-auto mb-4 opacity-80">
-                {/* Using standard img for trust seal if it's png/transparent to avoid complexity */}
-                <img src="/assets/trust_seal.jpg" alt="Verified Trust Seal" className="w-full h-full object-contain" />
+                <Image
+                  src={withBasePath("/favicon.png")}
+                  alt="BrandDragon editorial mark"
+                  width={128}
+                  height={128}
+                  className="h-full w-full object-contain"
+                />
               </div>
               <p className="font-serif italic text-lg text-muted-foreground">
                 — The BrandDragon Editorial Team

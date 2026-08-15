@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from 'next';
+import { withBasePath } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,10 +28,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${review.title} Review | BrandDragon`,
     description: review.editorialVerdict,
+    alternates: {
+      canonical: withBasePath(`/review/${review.slug}`),
+    },
     openGraph: {
       title: `${review.title} Review`,
       description: review.editorialVerdict,
-      images: [typeof review.thumbnailUrl === 'string' ? review.thumbnailUrl : (review.thumbnailUrl as any).src],
+      images: [
+        typeof review.thumbnailUrl === "string"
+          ? withBasePath(review.thumbnailUrl)
+          : withBasePath(review.thumbnailUrl.src),
+      ],
     },
   };
 }

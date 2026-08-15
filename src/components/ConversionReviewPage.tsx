@@ -27,6 +27,7 @@ import { Separator } from "@/components/ui/separator";
 import ProductConversionPopup, {
   type ProductConversionPopupConfig,
 } from "@/components/ProductConversionPopup";
+import { withBasePath } from "@/lib/site";
 
 type IconCard = {
   icon: LucideIcon;
@@ -189,7 +190,7 @@ export default function ConversionReviewPage({
             <div className="absolute -inset-8 rounded-[48px] bg-[radial-gradient(circle_at_35%_25%,rgba(132,204,22,.32),transparent_35%),radial-gradient(circle_at_80%_60%,rgba(56,189,248,.22),transparent_34%)] blur-2xl" />
             <div className="relative overflow-hidden rounded-[32px] border border-white/12 bg-white/8 p-4 shadow-2xl shadow-black/40 backdrop-blur">
               <Image
-                src={config.heroImage}
+                src={withBasePath(config.heroImage)}
                 alt={config.heroImageAlt}
                 width={1200}
                 height={900}

@@ -1,14 +1,17 @@
 import { MetadataRoute } from 'next'
+import { BASE_PATH, SITE_URL } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://branddragon.net'
-
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/private/', '/_next/'],
+      allow: `${BASE_PATH}/`,
+      disallow: [
+        `${BASE_PATH}/api/`,
+        `${BASE_PATH}/private/`,
+        `${BASE_PATH}/_next/`,
+      ],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   }
 }

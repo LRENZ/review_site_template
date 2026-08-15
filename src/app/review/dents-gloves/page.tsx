@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { BriefcaseBusiness, CheckCircle2, Hand, Laptop, ShieldCheck, Sparkles, Star, Sun } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=1d4d29lXUhw_bNi0i_bpLpP7eFgS8lnBLIFE6XNhuEjDZUyxFWs0t0SpsR6nXEFXhyL85fvis9E22HYzwOEer_as8wNrJ4Y8pxn8I4vBQ_c_c&new=https%3A%2F%2Fus.dentsgloves.com%2F";
 
 export const metadata: Metadata = {
   title: "Dents Gloves Review 2026: British Leather, Cashmere Lining, and Touchscreen Gloves | BrandDragon",
   description: "A Dents Gloves review for shoppers comparing British-made leather gloves, cashmere lining, touchscreen function, driving gloves, and Heritage accessories.",
-  alternates: { canonical: "/review/dents-gloves" },
-  openGraph: { title: "Dents Gloves Review: British Leather Craft Since 1777", description: "See who should buy Dents gloves and what to check before choosing leather, lining, size, and touchscreen features.", images: ["/dents-gloves-review.svg"] },
+  alternates: { canonical: withBasePath("/review/dents-gloves") },
+  openGraph: { title: "Dents Gloves Review: British Leather Craft Since 1777", description: "See who should buy Dents gloves and what to check before choosing leather, lining, size, and touchscreen features.", images: [withBasePath("/dents-gloves-review.svg")] },
 };
 
 const config: ConversionReviewConfig = {

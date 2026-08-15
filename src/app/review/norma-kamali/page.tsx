@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { BriefcaseBusiness, Gem, Layers3, Plane, Shirt, Sparkles, Star, Waves } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=4a30HD9R_anFxhNWwcuAfxXOyUWTZpVjssZFgGgSOAwNisI9bLcWOtCXI4i27iUiMWjqz8RhX2KUr_a957ZoWc7ngXM_arJAyWAoXloSA_c_c&new=https%3A%2F%2Fnormakamali.com%2F";
 
 export const metadata: Metadata = {
   title: "NORMA KAMALI Review 2026: Dresses, Swim, Bodysuits, and Modern Classics | BrandDragon",
   description: "A NORMA KAMALI review for shoppers comparing sculptural dresses, bodysuits, swimwear, active-inspired pieces, and travel-friendly wardrobe staples.",
-  alternates: { canonical: "/review/norma-kamali" },
-  openGraph: { title: "NORMA KAMALI Review: Sculptural Fashion and Modern Classics", description: "See who should shop NORMA KAMALI and what to check before buying a statement fashion piece.", images: ["/norma-kamali-review.svg"] },
+  alternates: { canonical: withBasePath("/review/norma-kamali") },
+  openGraph: { title: "NORMA KAMALI Review: Sculptural Fashion and Modern Classics", description: "See who should shop NORMA KAMALI and what to check before buying a statement fashion piece.", images: [withBasePath("/norma-kamali-review.svg")] },
 };
 
 const config: ConversionReviewConfig = {

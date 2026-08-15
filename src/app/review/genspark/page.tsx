@@ -32,6 +32,7 @@ import { Separator } from "@/components/ui/separator";
 import ProductConversionPopup, {
   type ProductConversionPopupConfig,
 } from "@/components/ProductConversionPopup";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink = "https://mainfuncpteltd.sjv.io/7XmrDV";
 
@@ -65,13 +66,13 @@ export const metadata: Metadata = {
   description:
     "A conversion-focused Genspark review for creators, marketers, founders, and operators who want an AI workspace that can create slides, docs, research, calls, and more from one prompt.",
   alternates: {
-    canonical: "/review/genspark",
+    canonical: withBasePath("/review/genspark"),
   },
   openGraph: {
     title: "Genspark Review: All-in-One AI Workspace for Real Output",
     description:
       "See where Genspark shines, who should use it, and when it is worth trying.",
-    images: ["/genspark-review.svg"],
+    images: [withBasePath("/genspark-review.svg")],
   },
 };
 
@@ -260,7 +261,7 @@ export default function GensparkReviewPage() {
             <div className="absolute -inset-8 rounded-[48px] bg-[radial-gradient(circle_at_35%_25%,rgba(132,204,22,.32),transparent_35%),radial-gradient(circle_at_80%_60%,rgba(56,189,248,.22),transparent_34%)] blur-2xl" />
             <div className="relative overflow-hidden rounded-[32px] border border-white/12 bg-white/8 p-4 shadow-2xl shadow-black/40 backdrop-blur">
               <Image
-                src="/genspark-review.svg"
+                src={withBasePath("/genspark-review.svg")}
                 alt="Genspark AI workspace interface concept"
                 width={1200}
                 height={900}

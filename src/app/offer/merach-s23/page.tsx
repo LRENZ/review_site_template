@@ -30,6 +30,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ProductConversionPopup, {
   type ProductConversionPopupConfig,
 } from "@/components/ProductConversionPopup";
+import { withBasePath } from "@/lib/site";
 
 const offerHref = "https://hongkongmerachtechnologycolimited.pxf.io/WO4gLM";
 
@@ -59,12 +60,12 @@ export const metadata: Metadata = {
   title: "MERACH S23 Recumbent Bike Review: Low-Impact Home Workout Offer | BrandDragon",
   description:
     "A detailed MERACH S23 recumbent exercise bike offer page covering resistance bands, adjustable comfort, low-impact cardio, comparison points, and who should buy.",
-  alternates: { canonical: "/offer/merach-s23" },
+  alternates: { canonical: withBasePath("/offer/merach-s23") },
   openGraph: {
     title: "MERACH S23 Recumbent Bike: A More Comfortable Way to Move at Home",
     description:
       "See how the S23 combines seated cardio, resistance bands, adjustable comfort, and a compact home-workout setup.",
-    images: ["/merach-s23-lifestyle.jpg"],
+    images: [withBasePath("/merach-s23-lifestyle.jpg")],
   },
 };
 
@@ -216,7 +217,7 @@ export default function MerachS23OfferPage() {
                 <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white shadow-2xl">
                   <div className="relative aspect-square">
                     <Image
-                      src="/merach-s23-lifestyle.jpg"
+                      src={withBasePath("/merach-s23-lifestyle.jpg")}
                       alt="MERACH S23 recumbent bike used with its resistance bands"
                       fill
                       priority
@@ -267,7 +268,7 @@ export default function MerachS23OfferPage() {
           <div className="container mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-sm">
               <Image
-                src="/merach-s23-training.jpg"
+                src={withBasePath("/merach-s23-training.jpg")}
                 alt="MERACH S23 showing its recumbent seat, pedals, display, and resistance bands"
                 fill
                 sizes="(min-width: 1024px) 52vw, 100vw"

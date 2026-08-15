@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/branddragon',
   distDir: 'dist', // Output to 'dist' to match Vercel's existing project configuration (Vite migration)
   // Use Static Export if hosting on Vercel/Netlify for free (often requested by users like this)
   // BUT the user asked for "Server Side Rendering", so let's stick to default SSR.

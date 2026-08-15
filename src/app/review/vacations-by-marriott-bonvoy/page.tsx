@@ -12,6 +12,7 @@ import {
 import ConversionReviewPage, {
   type ConversionReviewConfig,
 } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink =
   "https://ecomclik.com/?a=1001796&c=417842&co=364144&mt=20";
@@ -22,13 +23,13 @@ export const metadata: Metadata = {
   description:
     "A conversion-focused Vacations by Marriott Bonvoy review for travelers comparing hotel-and-flight packages, Marriott Bonvoy points, featured deals, and resort getaways.",
   alternates: {
-    canonical: "/review/vacations-by-marriott-bonvoy",
+    canonical: withBasePath("/review/vacations-by-marriott-bonvoy"),
   },
   openGraph: {
     title: "Vacations by Marriott Bonvoy Review",
     description:
       "See who should book through Vacations by Marriott Bonvoy and how to evaluate package value before reserving.",
-    images: ["/vacations-marriott-review.svg"],
+    images: [withBasePath("/vacations-marriott-review.svg")],
   },
 };
 

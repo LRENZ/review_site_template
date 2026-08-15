@@ -12,6 +12,7 @@ import {
 import ConversionReviewPage, {
   type ConversionReviewConfig,
 } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink = "https://shapellxaffiliateprogram.pxf.io/enqa5D";
 
@@ -21,13 +22,13 @@ export const metadata: Metadata = {
   description:
     "A conversion-focused Shapellx review for shoppers comparing shapewear, bodysuits, swim, compression levels, size range, fit, and wardrobe value.",
   alternates: {
-    canonical: "/review/shapellx",
+    canonical: withBasePath("/review/shapellx"),
   },
   openGraph: {
     title: "Shapellx Review: Shapewear and Supportive Wardrobe Staples",
     description:
       "See who should shop Shapellx, what to check before buying, and how to choose support level and fit.",
-    images: ["/shapellx-review.svg"],
+    images: [withBasePath("/shapellx-review.svg")],
   },
 };
 

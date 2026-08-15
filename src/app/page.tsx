@@ -101,6 +101,7 @@ function FeaturedReviewCard({ review }: { review: FeaturedReviewCard }) {
           src={review.image}
           alt={review.name}
           fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
         />
       </div>
@@ -148,11 +149,12 @@ export default function Home() {
 
           {/* Main Feature Card */}
           <div className="group relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-2xl cursor-pointer">
-            <Link href={`/review/${mainFeature.slug}`} className="block w-full h-full">
+            <Link href={`/review/${mainFeature.slug}`} className="relative block w-full h-full">
                 <Image
                   src={mainFeature.thumbnailUrl} 
                   alt={mainFeature.title}
                   fill
+                  sizes="(min-width: 1152px) 1152px, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
@@ -193,6 +195,7 @@ export default function Home() {
                     src={col.heroImage} 
                     alt={col.title}
                     fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
@@ -231,6 +234,7 @@ export default function Home() {
                       src={review.thumbnailUrl} 
                       alt={review.title}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-md text-xs font-bold shadow-sm">
@@ -290,7 +294,7 @@ export default function Home() {
              {recentReviews.map((review: any) => (
                <div key={review.id} className="flex gap-4 group items-start">
                   <div className="w-24 h-24 md:w-32 md:h-24 shrink-0 rounded-lg overflow-hidden bg-secondary relative">
-                    <Image src={review.thumbnailUrl} alt={review.title} fill className="object-cover" />
+                    <Image src={review.thumbnailUrl} alt={review.title} fill sizes="128px" className="object-cover" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">

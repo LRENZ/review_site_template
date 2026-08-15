@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { StaticImageData } from 'next/image';
+import { withBasePath } from '@/lib/site';
 // Real Product Images
 import patagoniaImg from '@/assets/products/patagonia.jpg';
 import nikeImg from '@/assets/products/nike.webp';
@@ -75,7 +76,7 @@ export const reviews: Review[] = [
     subCategory: 'AI Tools',
     rating: 4.7,
     affiliateLink: 'https://mainfuncpteltd.sjv.io/7XmrDV',
-    thumbnailUrl: '/genspark-review.svg',
+    thumbnailUrl: withBasePath('/genspark-review.svg'),
     updatedAt: '2026-05-06',
     editorialVerdict: 'Genspark is an all-in-one AI workspace built for people who want finished outputs: research, slides, docs, calls, media assets, and agent-style workflows.',
     buyingAdvice: 'Buy if you create client deliverables, presentations, reports, campaign assets, or operating workflows every week. Skip if you only need occasional basic AI chat.',
@@ -95,7 +96,7 @@ export const reviews: Review[] = [
     subCategory: 'Travel Packages',
     rating: 4.5,
     affiliateLink: 'https://ecomclik.com/?a=1001796&c=417842&co=364144&mt=20',
-    thumbnailUrl: '/vacations-marriott-review.svg',
+    thumbnailUrl: withBasePath('/vacations-marriott-review.svg'),
     updatedAt: '2026-05-26',
     editorialVerdict: 'Vacations by Marriott Bonvoy is worth checking when you want hotel-and-flight vacation packages, Marriott brand familiarity, featured destination deals, and potential Marriott Bonvoy points upside.',
     buyingAdvice: 'Click through if you are comparing a real resort, beach, family, or all-inclusive trip. Compare package totals against separate hotel and flight booking before you buy.',
@@ -115,7 +116,7 @@ export const reviews: Review[] = [
     subCategory: 'Shapewear',
     rating: 4.3,
     affiliateLink: 'https://shapellxaffiliateprogram.pxf.io/enqa5D',
-    thumbnailUrl: '/shapellx-review.svg',
+    thumbnailUrl: withBasePath('/shapellx-review.svg'),
     updatedAt: '2026-05-26',
     editorialVerdict: 'Shapellx is worth shopping when you need shapewear for a specific outfit, support level, or control area rather than vague browsing.',
     buyingAdvice: 'Click through if you know the outfit or body area you want to solve. Check compression level, size chart, reviews, return policy, and sale terms before ordering.',
@@ -135,7 +136,7 @@ export const reviews: Review[] = [
     subCategory: 'Fashion',
     rating: 4.5,
     affiliateLink: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=4a30HD9R_anFxhNWwcuAfxXOyUWTZpVjssZFgGgSOAwNisI9bLcWOtCXI4i27iUiMWjqz8RhX2KUr_a957ZoWc7ngXM_arJAyWAoXloSA_c_c&new=https%3A%2F%2Fnormakamali.com%2F',
-    thumbnailUrl: '/norma-kamali-review.svg',
+    thumbnailUrl: withBasePath('/norma-kamali-review.svg'),
     updatedAt: '2026-07-31',
     editorialVerdict: 'NORMA KAMALI is worth shopping when you want a sculptural dress, bodysuit, swim piece, or modern wardrobe staple with a strong designer point of view.',
     buyingAdvice: 'Click through with an occasion or wardrobe gap in mind. Check measurements, fabric, care, return terms, and how often you can style the piece.',
@@ -155,7 +156,7 @@ export const reviews: Review[] = [
     subCategory: 'Accessories',
     rating: 4.6,
     affiliateLink: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=1d4d29lXUhw_bNi0i_bpLpP7eFgS8lnBLIFE6XNhuEjDZUyxFWs0t0SpsR6nXEFXhyL85fvis9E22HYzwOEer_as8wNrJ4Y8pxn8I4vBQ_c_c&new=https%3A%2F%2Fus.dentsgloves.com%2F',
-    thumbnailUrl: '/dents-gloves-review.svg',
+    thumbnailUrl: withBasePath('/dents-gloves-review.svg'),
     updatedAt: '2026-07-31',
     editorialVerdict: 'Dents is a heritage glove maker known for leather, cashmere-lined, silk-lined, touchscreen, driving, and refined Heritage styles.',
     buyingAdvice: 'Click through with a use case in mind. Choose leather, lining, touchscreen function, hand size, weather needs, and care before ordering.',
@@ -175,7 +176,7 @@ export const reviews: Review[] = [
     subCategory: 'Intimates and Beauty',
     rating: 4.4,
     affiliateLink: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=e3b0SXCYjPfSg3qKgB9EU_aXGVmfP1Ki3_boupqc6lbGXxWFQk_a3tEWz5gR00XLF4QJNIx7RVSihY73OPMll6rJJ_bw_alX2hJD6i_aCruQ_c_c&new=https%3A%2F%2Fwww.victoriassecret.ae%2Fen%2F',
-    thumbnailUrl: '/victorias-secret-review.svg',
+    thumbnailUrl: withBasePath('/victorias-secret-review.svg'),
     updatedAt: '2026-07-31',
     editorialVerdict: "Victoria's Secret remains a broad specialty retailer for bras, panties, lingerie, sleepwear, beauty, swim, activewear, clothing, accessories, and gifts.",
     buyingAdvice: 'Click through with a category or fit need in mind. Check current fit guidance, fabric, promotion terms, final price, and returns before ordering.',
@@ -195,7 +196,7 @@ export const reviews: Review[] = [
     subCategory: 'Apparel',
     rating: 4.4,
     affiliateLink: 'https://ecomclik.com/?a=1001796&c=418768&co=364144&mt=20',
-    thumbnailUrl: '/levis-review.svg',
+    thumbnailUrl: withBasePath('/levis-review.svg'),
     updatedAt: '2026-05-26',
     editorialVerdict: "Levi's remains one of the easiest first stops for classic denim, everyday jeans, trucker jackets, tees, and wardrobe staples with familiar fits and broad wash options.",
     buyingAdvice: "Click through if you know the denim fit or wardrobe gap you want to solve. Check current sizing, fabric, stretch, wash, sale pricing, and return terms before ordering.",

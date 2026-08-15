@@ -12,6 +12,7 @@ import {
 import ConversionReviewPage, {
   type ConversionReviewConfig,
 } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink =
   "https://ecomclik.com/?a=1001796&c=418768&co=364144&mt=20";
@@ -22,13 +23,13 @@ export const metadata: Metadata = {
   description:
     "A conversion-focused Levi's review for shoppers comparing classic denim, 501 jeans, trucker jackets, fit consistency, sales, and everyday wardrobe value.",
   alternates: {
-    canonical: "/review/levis",
+    canonical: withBasePath("/review/levis"),
   },
   openGraph: {
     title: "Levi's Review: Classic Denim and Wardrobe Staples",
     description:
       "See who should shop Levi's, what to check before buying, and how it compares with premium denim and fast fashion.",
-    images: ["/levis-review.svg"],
+    images: [withBasePath("/levis-review.svg")],
   },
 };
 

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { BedDouble, BriefcaseBusiness, Gift, Heart, Moon, ShoppingBag, Sparkles, Waves } from "lucide-react";
 import ConversionReviewPage, { type ConversionReviewConfig } from "@/components/ConversionReviewPage";
+import { withBasePath } from "@/lib/site";
 
 const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=e3b0SXCYjPfSg3qKgB9EU_aXGVmfP1Ki3_boupqc6lbGXxWFQk_a3tEWz5gR00XLF4QJNIx7RVSihY73OPMll6rJJ_bw_alX2hJD6i_aCruQ_c_c&new=https%3A%2F%2Fwww.victoriassecret.ae%2Fen%2F";
 
 export const metadata: Metadata = {
   title: "Victoria's Secret Review 2026: Bras, Lingerie, Beauty, Sleep, and Activewear | BrandDragon",
   description: "A Victoria's Secret review for shoppers comparing bras, panties, lingerie, sleepwear, beauty, swim, activewear, and everyday fit options.",
-  alternates: { canonical: "/review/victorias-secret" },
-  openGraph: { title: "Victoria's Secret Review: Bras, Lingerie, Beauty, and More", description: "See who should shop Victoria's Secret and what to check before choosing fit, category, and current deal value.", images: ["/victorias-secret-review.svg"] },
+  alternates: { canonical: withBasePath("/review/victorias-secret") },
+  openGraph: { title: "Victoria's Secret Review: Bras, Lingerie, Beauty, and More", description: "See who should shop Victoria's Secret and what to check before choosing fit, category, and current deal value.", images: [withBasePath("/victorias-secret-review.svg")] },
 };
 
 const config: ConversionReviewConfig = {

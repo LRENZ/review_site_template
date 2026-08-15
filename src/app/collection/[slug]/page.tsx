@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { reviews } from "@/data/reviews";
 import type { Metadata } from 'next';
+import { withBasePath } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,10 +25,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${collection.title} | BrandDragon Collections`,
     description: collection.description,
+    alternates: {
+      canonical: withBasePath(`/collection/${collection.slug}`),
+    },
     openGraph: {
       title: collection.title,
       description: collection.description,
-      images: [typeof collection.heroImage === 'string' ? collection.heroImage : (collection.heroImage as any).src],
+      images: [
+        typeof collection.heroImage === "string"
+          ? withBasePath(collection.heroImage)
+          : withBasePath(collection.heroImage.src),
+      ],
     },
   };
 }
