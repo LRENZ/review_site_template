@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="fo-verify" content="1a20ad7e-0d69-448a-9654-13bed6c4e811" />
+        <meta name="verify-yeahpromos" content="7830c11f0c1e" />
         <meta name="impact-site-verification" {...({ value: "c70750fd-c17e-4f55-bd22-674175c82b30" } as any)} />
         <meta name="impact-site-verification" {...({ value: "d2709593-c1da-427b-ac98-79d7e0df170e" } as any)} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
