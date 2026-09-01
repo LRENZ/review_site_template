@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/category/market",
     "/category/digital",
     "/offer/merach-s23",
+    "/offer/merach-ultrawalk-w60-plus",
     "/offer/xtool",
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
