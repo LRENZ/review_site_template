@@ -22,6 +22,7 @@ const featuredReviewCards = [
   reviews.find(r => r.slug === 'norma-kamali'),
   reviews.find(r => r.slug === 'dents-gloves'),
   reviews.find(r => r.slug === 'victorias-secret'),
+  reviews.find(r => r.slug === 'le-creuset'),
 ].filter(Boolean).map((review) => ({
   name: review!.title,
   label: review!.subCategory,
@@ -69,6 +70,11 @@ const featuredReviewCopy: Record<string, { strength: string; fit: string; cta: s
     strength: "Bras, panties, lingerie, sleep, beauty, swim, activewear, clothing, and gift categories.",
     fit: "Best when you want several intimate and self-care categories in one store.",
     cta: "Read Victoria's Secret Review",
+  },
+  "le-creuset": {
+    strength: "Colorful enameled cast iron, stoneware, stainless steel, and kitchen pieces chosen around how you cook.",
+    fit: "Best when you want one long-term cookware workhorse and will choose material and size before color.",
+    cta: "Read Le Creuset Review",
   },
 };
 
