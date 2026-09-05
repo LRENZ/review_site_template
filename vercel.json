@@ -8,6 +8,10 @@
     {
       "source": "/offer/:path*",
       "destination": "/branddragon/offer/:path*"
+    },
+    {
+      "source": "/review/:path*",
+      "destination": "/branddragon/review/:path*"
     }
   ]
 }
