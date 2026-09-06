@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/offer/merach-s23",
     "/offer/merach-ultrawalk-w60-plus",
     "/offer/xtool",
+    "/offer/saucony-canada",
+    "/offer/saucony-us",
+    "/offer/kohls",
+    "/offer/zenni-optical",
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
