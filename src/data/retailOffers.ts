@@ -4,6 +4,7 @@ const sauconyCaLink = "https://c.ga-net.com/click?w=1004409&c=5184&t=&d=https%3A
 const sauconyUsLink = "https://c.ga-net.com/click?w=1004409&c=6358&t=&d=https%3A%2F%2Fwww.saucony.com%2Fen%2Fhome";
 const kohlsLink = "https://c.ga-net.com/click?w=1004409&c=2846&t=&d=https%3A%2F%2Fwww.kohls.com";
 const zenniLink = "https://zenni.pxf.io/4axXdn";
+const moroccanoilLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=ae69MqW4dFV3VPIFo3HyRULz7_bGLIo0RZqyGhlBVW_asGasIsBL89jCzlkManbIeT60Swp142FlJmeF5I2nVM0xUz1j_bLYhX9rADZMQ_c_c&new=https%3A%2F%2Fwww.moroccanoil.com";
 
 const sauconyShared = {
   brand: "Saucony",
@@ -119,4 +120,77 @@ export const zenniOffer: RetailOfferPageConfig = {
   faqs: [{ question: "What do I need before ordering prescription glasses online?", answer: "Use a valid, current prescription and an accurate pupillary distance, plus frame measurements that fit your face. Ask an eye-care professional if any value or lens recommendation is unclear." }, { question: "Is virtual try-on enough to confirm fit?", answer: "It is useful for previewing shape and style, but it does not replace frame measurements. Compare the listed dimensions with a comfortable pair you already own." }, { question: "How should I choose lens options?", answer: "Start with the prescription and primary use, then compare lens material, thickness, coatings, tint, and progressive or single-vision design. Suitability depends on your prescription and lifestyle." }, { question: "When should I use a local optical professional?", answer: "Use professional care for eye exams, symptoms, uncertain prescriptions, complex lens needs, precise fitting, and adjustments. This page is a shopping guide, not medical advice." }],
   finalTitle: "Choose the look, verify the numbers, then build the pair.", finalBody: "Open Zenni to compare current frames and lens options. Review every measurement, prescription value, delivery estimate, and return term before ordering.",
   popup: { productId: "zenni-optical", productName: "Zenni Optical", rating: "Fit-first online eyewear guide", headline: "Before you go: check the numbers behind the frame.", description: "The right style still needs the right measurements, prescription, and lens configuration.", bullets: ["Compare frame dimensions with a pair that fits", "Use a valid prescription and accurate pupillary distance", "Review lens options, delivery, and return terms"], ctaLabel: "Browse Zenni", ctaHref: zenniLink, storageKey: "product-popup:zenni-optical", banner: { eyebrow: "Zenni buying guide", headline: "Frame style is step one; fit and prescription finish the order", description: "Compare current frames, lens options, delivery, and returns." } },
+};
+
+export const moroccanoilOffer: RetailOfferPageConfig = {
+  brand: "Moroccanoil",
+  category: "Hair care routine guide",
+  badges: ["Moroccanoil", "Treatment · Hydration · Repair"],
+  headline: "Build a hair routine around what your strands need now.",
+  description: "Moroccanoil spans argan-oil-infused treatments, hydration, repair, masks, color care, and styling. This guide helps you choose by hair texture and goal before opening the official store.",
+  affiliateLink: moroccanoilLink,
+  ctaLabel: "Shop Moroccanoil",
+  heroImage: "/moroccanoil-hydration-hero.jpg",
+  heroAlt: "Two models with smooth, hydrated hair from the Moroccanoil hydration collection",
+  unoptimizedImages: true,
+  accent: "#d99b3d",
+  accentDark: "#073f5c",
+  accentSoft: "#dff2f2",
+  heroBackground: "#063b58",
+  highlights: [
+    { value: "Treat", label: "Argan-oil-infused finishing and conditioning" },
+    { value: "Hydrate", label: "Daily care and masks for dry-feeling hair" },
+    { value: "Repair", label: "Targeted care for weakened or damaged hair" },
+  ],
+  sectionEyebrow: "A routine that earns its shelf space",
+  sectionTitle: "Start with hair texture, then solve one priority.",
+  sectionBody: "The most useful shortlist begins with fine, medium, or thick texture and one primary goal: hydration, repair, smoothing, shine, color maintenance, or styling. That keeps a routine focused and makes product weight easier to judge.",
+  features: [
+    { eyebrow: "Texture first", title: "Match richness to the strand", body: "Fine hair often benefits from lighter formulas and careful amounts, while medium or thick dry hair may suit richer masks and conditioning products." },
+    { eyebrow: "One main goal", title: "Separate hydration from repair", body: "Dry-feeling hair and structurally weakened hair are not the same problem. Choose the collection that matches the current need instead of stacking every treatment." },
+    { eyebrow: "Use less, learn more", title: "Introduce one product at a time", body: "Start with the recommended amount and frequency, then observe softness, manageability, weight, and scalp comfort before adding another step." },
+  ],
+  categories: [
+    { image: "/moroccanoil-treatment-original.jpg", alt: "Moroccanoil Treatment Original hair oil bottle", eyebrow: "Signature treatment", title: "Finish with softness, shine, and manageability", body: "Moroccanoil Treatment Original is positioned as a versatile argan-oil-infused foundation for conditioning and finishing. Treatment Light is the lighter comparison for fine or light-colored hair.", bestFor: "a focused finishing step and users choosing between Original and Light" },
+    { image: "/moroccanoil-argan-care.jpg", alt: "Moroccanoil argan oil ingredient and hair care imagery", eyebrow: "Routine collections", title: "Hydration, repair, masks, and color care", body: "Hydration supports normal-to-dry hair, while restorative products target weakened or damaged hair. Mask richness also varies, so texture and usage instructions matter.", bestFor: "building a shampoo, conditioner, mask, or targeted-care routine" },
+  ],
+  comparisonTitle: "Choose the routine before you choose the bundle.",
+  comparisonBody: "The official Moroccanoil store is strongest for the current brand range and product guidance. Salons can add hands-on advice, while general marketplaces require more seller and authenticity checks.",
+  comparisonColumns: ["Moroccanoil official", "Salon or stylist", "General marketplace"],
+  comparisonRows: [
+    { label: "Best strength", brand: "Current collections, sizes, sets, and brand guidance", alternative: "Personalized, hands-on hair assessment", marketplace: "Convenient multi-brand comparison" },
+    { label: "Routine choice", brand: "Shop by hydration, repair, color, curl, or styling goal", alternative: "Advice informed by texture and service history", marketplace: "Depends on listing detail and seller expertise" },
+    { label: "Product confidence", brand: "Direct source with current product information", alternative: "Professional recommendation and retail support", marketplace: "Seller, condition, and authenticity can vary" },
+    { label: "Check before buying", brand: "Hair type, size, ingredients, usage, delivery, and returns", alternative: "Service fit, stock, and return policy", marketplace: "Authorized seller, packaging, condition, and returns" },
+  ],
+  stepsTitle: "Make the first routine easy to evaluate.",
+  stepsBody: "A smaller, well-matched routine makes it easier to understand what is helping, what feels too heavy, and what should change next.",
+  steps: [
+    { number: "01", title: "Describe texture and current condition", body: "Identify fine, medium, or thick texture, then note dryness, damage, color treatment, frizz, curl pattern, and how easily the hair becomes weighed down." },
+    { number: "02", title: "Choose one primary collection", body: "Start with hydration, repair, color care, curl care, smoothing, or styling. Compare the product page's intended hair type and instructions before building a set." },
+    { number: "03", title: "Confirm formula, frequency, and terms", body: "Review ingredients, fragrance sensitivities, amount, application order, usage frequency, size, delivery, and return terms before checkout." },
+  ],
+  choose: ["You know your hair texture and main current goal.", "You want to compare the current Moroccanoil range directly.", "You prefer a focused routine that can be adjusted over time."],
+  check: ["Whether the formula weight matches fine, medium, or thick hair.", "Ingredients, fragrance, directions, and recommended frequency.", "Current size, availability, delivery, and return terms."],
+  skip: ["You are adding several new treatments at once without a clear goal.", "You have an unexplained scalp or hair-loss concern needing professional advice.", "The seller or product condition cannot be verified."],
+  faqs: [
+    { question: "What is the difference between Moroccanoil Treatment Original and Light?", answer: "The brand positions Treatment Original for medium to thick hair and Treatment Light as the lighter option for fine or light-colored hair. Start with a small amount and confirm the current product guidance for your texture." },
+    { question: "Should I choose hydration or repair?", answer: "Hydration is the more direct starting point for hair that feels dry, while restorative care is designed for weakened or damaged hair. Chemical services, heat exposure, texture, and current condition can all affect the choice." },
+    { question: "Which mask suits fine hair?", answer: "Moroccanoil separates its richer Intense Hydrating Mask for medium-to-thick dry hair from the Weightless Hydrating Mask for fine dry hair. Follow the current instructions and avoid assuming more product means a better result." },
+    { question: "What should I verify before ordering?", answer: "Check the intended hair type, product goal, ingredients, fragrance, directions, size, current availability, delivery estimate, and return terms on the official product page." },
+  ],
+  finalTitle: "Choose one hair goal, then see the current Moroccanoil routine.",
+  finalBody: "Open the official Moroccanoil store to compare current treatments, hydration, repair, masks, color care, styling products, sizes, sets, delivery, and returns.",
+  popup: {
+    productId: "moroccanoil",
+    productName: "Moroccanoil",
+    rating: "Texture-first hair care guide",
+    headline: "Before you go: choose the routine by texture and goal.",
+    description: "A focused routine is easier to use and easier to judge than a shelf full of overlapping treatments.",
+    bullets: ["Compare Treatment Original and Light by hair texture", "Separate hydration needs from weakened or damaged hair", "Check ingredients, usage, size, delivery, and returns"],
+    ctaLabel: "Shop Moroccanoil",
+    ctaHref: moroccanoilLink,
+    storageKey: "product-popup:moroccanoil",
+    banner: { eyebrow: "Moroccanoil routine guide", headline: "Start with texture, then solve one clear hair goal", description: "Compare current products, sizes, sets, delivery, and returns." },
+  },
 };
