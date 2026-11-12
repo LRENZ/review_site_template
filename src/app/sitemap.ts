@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/offer/kohls",
     "/offer/zenni-optical",
     "/offer/moroccanoil",
+    "/offer/davids-bridal",
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),

@@ -37,6 +37,7 @@ export type RetailOfferPageConfig = {
   heroImage: string;
   heroAlt: string;
   unoptimizedImages?: boolean;
+  containImages?: boolean;
   accent: string;
   accentDark: string;
   accentSoft: string;
@@ -103,7 +104,7 @@ export default function RetailOfferPage({ config }: { config: RetailOfferPageCon
               </div>
               <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-lg border border-white/15 bg-white shadow-2xl">
                 <div className="relative aspect-[4/3] lg:aspect-[5/4]">
-                  <Image src={withBasePath(config.heroImage)} alt={config.heroAlt} fill priority unoptimized={config.unoptimizedImages} sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+                  <Image src={withBasePath(config.heroImage)} alt={config.heroAlt} fill priority unoptimized={config.unoptimizedImages} sizes="(min-width: 1024px) 55vw, 100vw" className={config.containImages ? "object-contain" : "object-cover"} />
                 </div>
                 <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3 rounded-md bg-white/95 px-4 py-3 text-[#171a1d] shadow-lg backdrop-blur">
                   <div className="min-w-0"><p className="truncate text-sm font-bold">{config.brand}{config.region ? ` · ${config.region}` : ""}</p><p className="truncate text-xs text-[#667078]">Check current selection, fit, delivery, and returns.</p></div>
@@ -133,7 +134,7 @@ export default function RetailOfferPage({ config }: { config: RetailOfferPageCon
           <div className="container mx-auto max-w-6xl px-5">
             <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div className="max-w-3xl"><p className="text-sm font-bold uppercase tracking-[.16em]" style={{ color: config.accentDark }}>{config.category}</p><h2 className="mt-3 text-4xl font-bold md:text-5xl">Start with the job, then choose the product.</h2></div><OfferCta config={config} className="hidden h-12 rounded-md px-6 font-bold text-white md:inline-flex" /></div>
             <div className="grid gap-6 md:grid-cols-2">
-              {config.categories.map((item) => <article key={item.title} className="overflow-hidden rounded-lg border border-[#ddd8cf] bg-[#f7f6f2]"><div className="relative aspect-[16/9] bg-[#eceae5]"><Image src={withBasePath(item.image)} alt={item.alt} fill unoptimized={config.unoptimizedImages} sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" /></div><div className="p-6"><p className="text-xs font-bold uppercase tracking-[.16em]" style={{ color: config.accentDark }}>{item.eyebrow}</p><h3 className="mt-2 text-2xl font-bold">{item.title}</h3><p className="mt-3 leading-7 text-[#687078]">{item.body}</p><p className="mt-4 border-t border-[#ddd8cf] pt-4 text-sm"><span className="font-bold">Best for:</span> {item.bestFor}</p></div></article>)}
+{config.categories.map((item) => <article key={item.title} className="overflow-hidden rounded-lg border border-[#ddd8cf] bg-[#f7f6f2]"><div className="relative aspect-[16/9] bg-[#eceae5]"><Image src={withBasePath(item.image)} alt={item.alt} fill unoptimized={config.unoptimizedImages} sizes="(min-width: 768px) 50vw, 100vw" className={config.containImages ? "object-contain" : "object-cover"} /></div><div className="p-6"><p className="text-xs font-bold uppercase tracking-[.16em]" style={{ color: config.accentDark }}>{item.eyebrow}</p><h3 className="mt-2 text-2xl font-bold">{item.title}</h3><p className="mt-3 leading-7 text-[#687078]">{item.body}</p><p className="mt-4 border-t border-[#ddd8cf] pt-4 text-sm"><span className="font-bold">Best for:</span> {item.bestFor}</p></div></article>)}
             </div>
           </div>
         </section>

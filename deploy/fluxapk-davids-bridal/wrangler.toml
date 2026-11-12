@@ -1,0 +1,5 @@
+name = "fluxapk-davids-bridal"
+main = "worker.js"
+compatibility_date = "2026-11-12"
+account_id = "6605966547867b586d578447622ce8da"
+workers_dev = true
