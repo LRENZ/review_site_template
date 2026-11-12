@@ -7,12 +7,17 @@ export default {
     }
     const url = new URL(request.url);
     const isOffer = ["/", "/offer/davids-bridal", "/offer/davids-bridal/", "/branddragon/offer/davids-bridal"].includes(url.pathname);
-    const isAsset = url.pathname.startsWith("/branddragon/_next/") ||
+    const isAsset = url.pathname === "/branddragon" || url.pathname.startsWith("/branddragon/") ||
       /^\/branddragon\/davids-bridal-[a-z-]+\.jpg$/.test(url.pathname);
     if (!isOffer && !isAsset) return Response.redirect(ORIGIN + url.pathname + url.search, 302);
     const upstreamPath = isOffer ? "/branddragon/offer/davids-bridal" : url.pathname;
     const upstream = await fetch(ORIGIN + upstreamPath + url.search, {
       method: request.method,
+      headers: Object.fromEntries(
+        ["accept", "rsc", "next-router-state-tree", "next-router-prefetch", "next-url"]
+          .filter((name) => request.headers.has(name))
+          .map((name) => [name, request.headers.get(name)])
+      ),
       redirect: "follow",
     });
     const headers = new Headers(upstream.headers);
