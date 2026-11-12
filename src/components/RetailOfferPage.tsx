@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -27,6 +28,7 @@ type Faq = { question: string; answer: string };
 
 export type RetailOfferPageConfig = {
   brand: string;
+  brandLogo?: string;
   region?: string;
   category: string;
   badges: string[];
@@ -76,7 +78,7 @@ function OfferCta({ config, label, className }: { config: RetailOfferPageConfig;
   );
 }
 
-export default function RetailOfferPage({ config }: { config: RetailOfferPageConfig }) {
+export default function RetailOfferPage({ config, children }: { config: RetailOfferPageConfig; children?: ReactNode }) {
   const heroText = config.heroForeground ?? "#ffffff";
 
   return (
@@ -89,6 +91,7 @@ export default function RetailOfferPage({ config }: { config: RetailOfferPageCon
             </Link>
             <div className="grid gap-8 py-8 lg:min-h-[650px] lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-12 lg:py-10">
               <div className="flex flex-col items-start gap-5">
+                {config.brandLogo && <div className="rounded-md bg-white px-5 py-3"><Image src={withBasePath(config.brandLogo)} alt={config.brand + " logo"} width={250} height={34} unoptimized className="h-8 w-[250px] max-w-full object-contain" /></div>}
                 <div className="flex flex-wrap gap-2">
                   {config.badges.map((badge) => <Badge key={badge} className="border-white/20 bg-white/10 text-current hover:bg-white/10">{badge}</Badge>)}
                 </div>
@@ -120,6 +123,8 @@ export default function RetailOfferPage({ config }: { config: RetailOfferPageCon
             {config.highlights.map((item) => <div key={item.label} className="border-[#ddd8cf] sm:border-r sm:pr-5 last:border-0"><p className="text-xl font-bold" style={{ color: config.accentDark }}>{item.value}</p><p className="mt-1 text-sm text-[#687078]">{item.label}</p></div>)}
           </div>
         </section>
+
+        {children}
 
         <section className="py-16 md:py-24">
           <div className="container mx-auto max-w-6xl px-5">

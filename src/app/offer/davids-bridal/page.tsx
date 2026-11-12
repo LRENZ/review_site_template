@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import RetailOfferPage from "@/components/RetailOfferPage";
 import { davidsBridalOffer } from "@/data/davidsBridalOffer";
 import { withBasePath } from "@/lib/site";
+import DavidsBridalConfidence from "@/components/DavidsBridalConfidence";
 
 export const metadata: Metadata = {
   title: "David's Bridal: Wedding Dress & Bridal Party Guide | BrandDragon",
@@ -11,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function DavidsBridalPage() {
-  return <RetailOfferPage config={davidsBridalOffer} />;
+  return <RetailOfferPage config={davidsBridalOffer}><DavidsBridalConfidence /></RetailOfferPage>;
 }
