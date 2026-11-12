@@ -4,7 +4,7 @@ const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=8ee
 
 export const davidsBridalOffer: RetailOfferPageConfig = {
   brand: "David's Bridal",
-  brandLogo: "/davids-bridal-logo.webp",
+  brandLogo: "/davids-bridal-wordmark.svg",
   category: "Wedding dresses and occasionwear",
   badges: ["David's Bridal", "Bridal / Bridesmaids / Occasionwear"],
   headline: "David's Bridal wedding dress guide",
