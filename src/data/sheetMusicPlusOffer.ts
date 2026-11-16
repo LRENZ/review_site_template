@@ -1,0 +1,71 @@
+import type { RetailOfferPageConfig } from "@/components/RetailOfferPage";
+
+const affiliateLink = "https://www.linkhaitao.com/index.php?mod=lhdeal&track=ff8a1vqoXbiagrfj1RQDUh9Tvl1T_a5MNuEFiiJsLIvkdvs4_bUmDji0gGYt7s7ldRO66vPNlk0SkjosGR4gP4UmYWWhDFHDkrpTRzGg_c_c&new=https%3A%2F%2Fwww.sheetmusicplus.com";
+
+export const sheetMusicPlusOffer: RetailOfferPageConfig = {
+  brand: "Sheet Music Plus",
+  category: "Sheet music, methods, and repertoire",
+  badges: ["Sheet Music Plus", "Print / Digital / Teaching"],
+  headline: "Sheet Music Plus buying guide",
+  description: "Find the right arrangement for the music you want to play. Compare instrument, difficulty, edition, and format before choosing scores for practice, lessons, or your next performance.",
+  affiliateLink, ctaLabel: "Browse Sheet Music Plus",
+  heroImage: "/sheetmusicplus-practice.png",
+  heroAlt: "Illustrative AI-generated piano practice scene, not a merchant product photograph",
+  unoptimizedImages: true, containImages: true,
+  accent: "#ba4c18", accentDark: "#233f42", accentSoft: "#e4efec", heroBackground: "#233f42",
+  highlights: [
+    { value: "Your instrument", label: "Piano, voice, guitar, strings, winds, and more" },
+    { value: "Your level", label: "Compare difficulty and available score previews" },
+    { value: "Your format", label: "Choose a print edition or an eligible digital download" },
+  ],
+  sectionEyebrow: "Why put it on your shortlist",
+  sectionTitle: "One piece of music. Several ways to play it.",
+  sectionBody: "Sheet Music Plus brings together repertoire, instructional books, and ensemble music. Its catalogue includes piano, guitar, vocal, choral, band, orchestra, and chamber categories. The useful question is which specific arrangement matches your players, not simply whether a song title appears.",
+  features: [
+    { eyebrow: "Solo and ensemble", title: "Search for the players you have", body: "Piano solo, piano accompaniment, vocal selections, guitar tablature, and ensemble parts are different products. Start with the required instrument or voicing, then narrow the title." },
+    { eyebrow: "A realistic challenge", title: "Use the preview to judge the level", body: "When a sample is available, look at rhythm, range, texture, and page turns. Easy piano is a category, not a promise that every arrangement will suit every beginner." },
+    { eyebrow: "A repeatable lesson", title: "Match the teacher's exact edition", body: "For methods and course books, confirm the series, book number, instrument, publisher, and edition or ISBN. Check whether any audio or online resources are included." },
+  ],
+  categories: [
+    { image: "/sheetmusicplus-piano.jpg", alt: "Official Sheet Music Plus image of hands playing piano", eyebrow: "Practice and repertoire", title: "Piano, voice, guitar, and solo music", body: "Build a shortlist around a piece you want to learn and an arrangement you can use. For singers, check the key and accompaniment; for guitar, check whether the edition contains notation, chords, or tablature.", bestFor: "individual practice, auditions, recitals, and personal repertoire" },
+    { image: "/sheetmusicplus-teaching.jpg", alt: "Official Sheet Music Plus image of a teacher guiding a young guitar student", eyebrow: "Lessons and group music", title: "Methods, choir, band, and orchestra", body: "Match a lesson sequence or your ensemble's actual forces. Check voicing, score versus parts, included instruments, and any minimum order or licensed-copy requirements on the listing.", bestFor: "teachers, students, directors, and rehearsal planning" },
+  ],
+  comparisonTitle: "Print, digital, or a score with parts?",
+  comparisonBody: "Choose the format around how the music will be used. A downloadable score and a bound book can serve different needs, and a conductor score does not automatically include every player's part.",
+  comparisonColumns: ["Print edition", "Digital download", "Ensemble score / parts"],
+  comparisonRows: [
+    { label: "Best use", brand: "A physical book or edition for the stand or studio", alternative: "An eligible downloadable arrangement for near-term practice", marketplace: "Music matched to a specific group of performers" },
+    { label: "Availability", brand: "Check stock, publisher lead time, and delivery estimate", alternative: "Confirm the listing is digital and how access is provided", marketplace: "Check which score and parts are actually included" },
+    { label: "Version check", brand: "Publisher, ISBN, instrumentation, edition, and binding", alternative: "Arranger, key, difficulty, pages, and licensed copies", marketplace: "Voicing, instrumentation, set contents, and quantity" },
+    { label: "Extra costs", brand: "Shipping, tax, and any separate accessories", alternative: "Printing and the number of licensed copies needed", marketplace: "Additional parts, additional copies, and shipping if physical" },
+    { label: "Before buying", brand: "Confirm the exact edition and required arrival date", alternative: "Review access, print permissions, and applicable return terms", marketplace: "Confirm every player can use the purchased materials" },
+  ],
+  stepsTitle: "Buy the arrangement you can actually use.",
+  stepsBody: "A short check of the listing can prevent a familiar title from becoming the wrong book, key, or set of parts.",
+  steps: [
+    { number: "01", title: "Write down the musical requirements", body: "List the instrument or ensemble, ability level, preferred key, intended performance, and deadline. For a teacher-assigned book, ask for the exact edition or ISBN." },
+    { number: "02", title: "Compare the listing and preview", body: "Read the arranger, publisher, instrumentation, level, format, and contents. Use available score or audio samples to assess suitability; not every product has the same preview options." },
+    { number: "03", title: "Confirm access, copies, and timing", body: "For downloads, check the licence and permitted copies. For print, check availability and shipping. Review the current item-specific return terms before completing checkout." },
+  ],
+  choose: ["You know your instrument, voicing, or teaching series.", "You want to compare repertoire across publishers and arrangers.", "You will check the exact edition, format, and difficulty."],
+  check: ["Piano solo versus accompaniment; score versus parts.", "The key, arrangement, edition, and level.", "Licensed copies, availability, delivery, and return terms."],
+  skip: ["The arrangement does not match your performers.", "The physical edition cannot arrive before your deadline.", "You cannot confirm the contents or usage rights you need."],
+  faqs: [
+    { question: "Does every title have a digital version?", answer: "No. Look for the format on the specific product page. A print listing and a digital arrangement may have different publishers, contents, levels, or keys." },
+    { question: "How do I know whether a piece is too difficult?", answer: "Treat the level label as a starting point, then study the available preview for rhythm, range, technique, and texture. A teacher or director can help assess whether the arrangement matches your present ability." },
+    { question: "Is easy piano the same as piano, vocal, and guitar?", answer: "No. Easy piano usually indicates an adapted piano arrangement, while a piano/vocal/guitar edition commonly combines a vocal line, piano part, and guitar chord symbols. Always inspect the listing and sample." },
+    { question: "Can I print one digital purchase for my whole choir?", answer: "Do not assume one purchase covers the group. The digital listing explains the number of copies purchased and permitted use. Order the number of licensed copies required and check any product-specific minimums." },
+    { question: "Does a conductor score include instrumental parts?", answer: "Not automatically. Score-only products, individual parts, and full sets are separate possibilities. Read the contents and instrumentation before ordering." },
+    { question: "What about shipping and returns?", answer: "Check the current availability, delivery estimate, and policies for your location and product. Special-order print items and digital purchases can have different conditions; confirm before paying." },
+  ],
+  finalTitle: "Find your next piece. Check the edition. Start playing.",
+  finalBody: "Explore the current Sheet Music Plus catalogue, compare arrangements, and confirm format, difficulty, contents, and availability for your next practice or performance.",
+  popup: {
+    productId: "sheetmusicplus", productName: "Sheet Music Plus", rating: "Instrument, level, and edition guide",
+    headline: "Before you go: find the arrangement that fits.",
+    description: "The right title is only the beginning. Match the instrument, difficulty, format, and edition to your players.",
+    bullets: ["Browse solo, ensemble, and teaching music", "Check the arranger, level, key, and available preview", "Confirm print delivery or digital access and licensed copies"],
+    ctaLabel: "Browse Sheet Music Plus", ctaHref: affiliateLink, storageKey: "product-popup:sheetmusicplus",
+    banner: { eyebrow: "Sheet Music Plus guide", headline: "The right music starts with the right arrangement", description: "Compare instruments, levels, print editions, and digital downloads." },
+  },
+};
